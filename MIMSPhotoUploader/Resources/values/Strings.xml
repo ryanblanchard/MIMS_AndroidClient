@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">MIMSPhotoUploader</string>
+	<string name="app_name">Manage Borrow Pit Photos</string>
+	<string name="find_borrowpit">Find Borrow Pit</string>
+	<string name="label_Roadno">ROAD NO</string>
+
 </resources>
