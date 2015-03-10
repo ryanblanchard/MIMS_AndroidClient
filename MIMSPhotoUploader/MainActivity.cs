@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using SQLite;
 
 namespace MIMSPhotoUploader
 {
@@ -27,6 +28,20 @@ namespace MIMSPhotoUploader
 			
 			button.Click += delegate {
 				button.Text = string.Format ("{0} clicks!", count++);
+
+				//var db = new GSMMobileDB();
+
+				//var qry = from a in db.Material
+				string fileName = "GMSMobileDB";
+				string dbPath  = System.IO.Path.Combine(fileName);
+				var db = new SQLiteConnection (dbPath);
+
+				//var stock = db.Get<MaterialSrc>(5); // primary key id of 5
+				var stockList = db.Table<MaterialSrc>();
+				int recCnt = stockList.Count();
+
+				button.Text = string.Format ("{0} pits!", recCnt);
+
 			};
 		}
 	}
