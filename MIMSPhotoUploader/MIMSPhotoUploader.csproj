@@ -51,8 +51,8 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BorrowpitListActivity.cs" />
-    <Compile Include="Data\GSMMobileDB.cs" />
-    <Compile Include="Data\MaterialSrc.cs" />
+    <Compile Include="Data\App.cs" />
+    <Compile Include="Data\MIMS_MATERIAL_SRC.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

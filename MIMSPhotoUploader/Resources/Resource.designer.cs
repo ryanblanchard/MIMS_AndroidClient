@@ -62,6 +62,9 @@ namespace MIMSPhotoUploader
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050004
+			public const int listView1 = 2131034116;
+			
 			// aapt resource value: 0x7f050003
 			public const int myButton = 2131034115;
 			
