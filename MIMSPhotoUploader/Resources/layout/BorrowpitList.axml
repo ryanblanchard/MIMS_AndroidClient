@@ -5,10 +5,48 @@
     android:layout_height="fill_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <ListView
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:weightSum="3"
+        android:splitMotionEvents="false"
+        android:background="@android:color/background_light">
+        <TextView
+            android:text="@string/label_BorrowpitName"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <TextView
+            android:text="@string/label_Roadno"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2"
+            android:layout_weight="1" />
+        <TextView
+            android:text="@string/label_Id"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/labelID"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/list" />
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2">
+        <ListView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list" />
+    </LinearLayout>
 </LinearLayout>

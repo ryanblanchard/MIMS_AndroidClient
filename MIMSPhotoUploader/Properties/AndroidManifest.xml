@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="MIMSPhotoUploader.MIMSPhotoUploader">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="19" />
 	<application android:label="MIMS Photo Uploader" ></application>
-	<application android:label="MIMS Borrowpit List"></application>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
 	<uses-permission android:name="android.permission.CONTROL_LOCATION_UPDATES" />

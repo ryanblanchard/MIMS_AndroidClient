@@ -17,7 +17,7 @@ namespace MIMSPhotoUploader
 	public class BorrowpitListActivity : ListActivity
 	{
 
-		string[] items;
+		//string[] items;
 
 		protected override void OnCreate (Bundle bundle)
 		{

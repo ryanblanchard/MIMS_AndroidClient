@@ -8,7 +8,7 @@ namespace MIMSPhotoUploader.Data
 	public class MIMS_MATERIAL_SRC
 	{
 		[PrimaryKey]
-		public int Id { get; set;}
+		public int ID { get; set;}
 		public string MATERIAL_SRC_NO { get; set;}
 		public string BORROWPIT_NO { get; set;}
 		public string ROAD_NO { get; set;}

@@ -32,7 +32,7 @@ namespace MIMSPhotoUploader
 
 			foreach (var t in table) {
 				BorrowPit bp = new BorrowPit ();
-				bp.Id = t.Id;
+				bp.Id = t.ID;
 				bp.BorrowpitName = t.MATERIAL_SRC_NO;
 				bp.RoadNo = t.ROAD_NO;
 
