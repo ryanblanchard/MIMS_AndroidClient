@@ -25,8 +25,7 @@ namespace MIMSPhotoUploader
 
 		public void FillBorrowPits()
 		{
-			var conn = new SQLiteConnection (App._dbFileName);
-
+			var conn = dbBorrowPit.ConnectToDB();
 			var table = conn.Table<Data.MIMS_MATERIAL_SRC> ();
 
 			_borrowpitList = new List<BorrowPit> ();
@@ -60,13 +59,13 @@ namespace MIMSPhotoUploader
 			var view = convertView ?? _activity.LayoutInflater.Inflate (
 				Resource.Layout.BorrowPitListItem, parent, false);
 
-			var ID = view.FindViewById<TextView> (Resource.Id.BorrowPitId);
 			var BorrowPitName = view.FindViewById<TextView> (Resource.Id.BorrowPitName);
 			var RoadNo = view.FindViewById<TextView> (Resource.Id.BorrowPitNo);
+			var ID = view.FindViewById<TextView> (Resource.Id.BorrowPitId);
 
-			ID.Text = _borrowpitList [position].Id.ToString();
 			BorrowPitName.Text = _borrowpitList [position].BorrowpitName;
 			RoadNo.Text  =_borrowpitList [position].RoadNo;
+			ID.Text = _borrowpitList [position].Id.ToString();
 
 			return view;
 		}

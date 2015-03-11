@@ -38,26 +38,11 @@ namespace MIMSPhotoUploader
 			
 			button.Click += delegate {
 
-				button.Text = string.Format ("{0} clicks!", count++);
-
-				try {
-
-					var conn = MIMSPhotoUploader.dbBorrowPit.ConnectToDB();
-
-					//var conn = new SQLiteConnection (App._dbFileName);
-
-					button.Text = string.Format ("{0}", "Connected");
-
-				} catch (Exception ex) {
-
-					button.Text = string.Format ("Ex: {0}", ex.Message);
-				}
+				StartActivity(typeof(BorrowpitListActivity));
 
 			};
 
 		}
-
-
 
 	}
 }
