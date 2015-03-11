@@ -42,27 +42,14 @@ namespace MIMSPhotoUploader
 
 				try {
 
-					ConnectToDB();
+					var conn = MIMSPhotoUploader.dbBorrowPit.ConnectToDB();
 
-					var conn = new SQLiteConnection (App._dbFileName);
+					//var conn = new SQLiteConnection (App._dbFileName);
 
-					//conn.Table<MIMS_MATERIAL_SRC>.
-
-					//var s = from e in conn.Table<MIMS_MATERIAL_SRC>()
-//					//		where (1 == 1)
-					//		select e;
-					//
-					//foreach (var src in s.
-				//	{
-				//		System.Console.WriteLine(src.MATERIAL_SRC_NO.ToString());
-				//	}
-						
-
-
-
-					button.Text = string.Format ("Connected");
+					button.Text = string.Format ("{0}", "Connected");
 
 				} catch (Exception ex) {
+
 					button.Text = string.Format ("Ex: {0}", ex.Message);
 				}
 
@@ -70,15 +57,7 @@ namespace MIMSPhotoUploader
 
 		}
 
-		static void ConnectToDB ()
-		{
-			string folder = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
-			folder = "/storage/emulated/0/";
-			App._dbFileName = System.IO.Path.Combine (folder, "GMSMobileDB.s3db");
-			var conn = new SQLiteConnection (App._dbFileName);
-			//conn.CreateTable<Stock> ();
-			System.Console.WriteLine (App._dbFileName);
-		}
+
 
 	}
 }

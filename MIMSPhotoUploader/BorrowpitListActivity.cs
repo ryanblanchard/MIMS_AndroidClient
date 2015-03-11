@@ -23,8 +23,19 @@ namespace MIMSPhotoUploader
 		{
 			base.OnCreate (bundle);
 
-			
-			// Create your application here
+			items = GetBorrowPitItems ();
+
+			ArrayAdapter adapter = new ArrayAdapter (this, Resource.Layout.BorrowPitListItem, items);
+			ListAdapter = adapter;
+
+		}
+
+		private string[] GetBorrowPitItems()
+		{
+
+			return new string[]{ "DR0100", "DR9763", "DR3456", "DR4567", "DR4443", "DR4432" };
+
+			//Arra
 		}
 
 	}

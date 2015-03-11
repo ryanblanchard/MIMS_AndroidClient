@@ -53,6 +53,9 @@
     <Compile Include="BorrowpitListActivity.cs" />
     <Compile Include="Data\App.cs" />
     <Compile Include="Data\MIMS_MATERIAL_SRC.cs" />
+    <Compile Include="BorrowpitAdapter.cs" />
+    <Compile Include="Data\dbBorrowPit.cs" />
+    <Compile Include="Data\BorrowPit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -68,6 +71,9 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\layout\FindBorrowpit.axml" />
+    <AndroidResource Include="Resources\layout\BorrowPitListItem.XML" />
+    <AndroidResource Include="Resources\layout\ImageListLayout.axml" />
+    <AndroidResource Include="Resources\layout\ImageListItem.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

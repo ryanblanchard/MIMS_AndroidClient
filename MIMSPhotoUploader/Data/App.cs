@@ -1,6 +1,7 @@
 ﻿using System;
 using Android.Graphics;
 using Java.IO;
+using SQLite;
 
 
 namespace MIMSPhotoUploader
@@ -15,5 +16,8 @@ namespace MIMSPhotoUploader
 		public static string _lat;
 		public static string _long;
 	}
+
+
+
 }
 
