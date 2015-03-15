@@ -30,6 +30,10 @@ namespace MIMSPhotoUploader
 		TextView textCategory;
 		TextView textPhotoUrl;
 		Spinner spinCategory;
+		List<string> list;
+
+		string PhotoCategoryDesc;
+
 
 		int borrowpitId;
 		string borrowpitName;
@@ -53,7 +57,7 @@ namespace MIMSPhotoUploader
 				userName = "Dev";
 			}
 */
-			CreateDirectoryForPictures ();
+			CreateDirectoryForPictures();
 
 			borrowpitId = 27; //TODO: find closest borrowpit via GPS
 			borrowpitName = "RYAN'S TEST BORROWPIT";
@@ -68,7 +72,25 @@ namespace MIMSPhotoUploader
 			//TODO: Find the borrow pit description for display
 			textCategory = FindViewById<TextView> (Resource.Id.textCategoryName);
 
+
+
+			list = GetPhotoCategories ();
 			spinCategory = FindViewById<Spinner> (Resource.Id.spinCategory);
+			spinCategory.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs> (spinCategory_ItemSelected);
+			//	var adapter = ArrayAdapter.CreateFromResource (this, Android.Resource.Layout.SimpleSpinnerItem);
+
+
+			ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>
+				(this, Android.Resource.Layout.SimpleSpinnerItem, list);
+
+			dataAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerItem);
+			 
+			spinCategory.Adapter = dataAdapter;
+
+
+
+
+
 			//TODO: populate with description categories
 
 			textPhotoUrl = FindViewById<TextView> (Resource.Id.textPhotoUri);
@@ -120,10 +142,13 @@ namespace MIMSPhotoUploader
 							spinCategory.SetSelection(0);
 							imageView.SetImageBitmap(null);
 							textPhotoUrl.Text = "";
-
 						}
-
-
+						catch (Exception ex)
+						{
+							Log.Error(tag,ex.Message);
+							Android.Widget.Toast.MakeText(this, "Error Inserting Image to Database", Android.Widget.ToastLength.Short).Show();
+						}
+							
 					} else {
 						Log.Info (tag, String.Format ("No Image loaded"));
 						//textMessage.Text = String.Format("No Photo to save.");		
@@ -132,6 +157,16 @@ namespace MIMSPhotoUploader
 
 				};
 			}
+		}
+
+		private void spinCategory_ItemSelected (object sender, AdapterView.ItemSelectedEventArgs e)
+		{
+			Spinner spinner = (Spinner)sender;
+
+			string toast = string.Format ("The planet is {0}", spinner.GetItemAtPosition (e.Position));
+
+			PhotoCategoryDesc = spinner.SelectedItem.ToString ();  //GetItemAtPosition (e.Position);
+			Toast.MakeText (this, toast, ToastLength.Long).Show ();
 		}
 
 		private bool IsThereAnAppToTakePictures()
@@ -201,6 +236,22 @@ namespace MIMSPhotoUploader
 				textPhotoUrl.Text = App._file.Path;
 				App.bitmap = null;
 			}
+		}
+
+
+		private List<String> GetPhotoCategories ()
+		{
+			List<String> list;
+			list = new List<String> ();
+
+			var db = dbBorrowPit.ConnectToDB ();
+			var query = db.Table<MIMS_UPL_PHOTO_CATEGORIES> ();
+			foreach (var it in query) {
+				string PhotoCategory = it.PHOTO_CATEGORY_DESC;
+				list.Add (PhotoCategory);
+			}
+
+			return list;
 		}
 
 

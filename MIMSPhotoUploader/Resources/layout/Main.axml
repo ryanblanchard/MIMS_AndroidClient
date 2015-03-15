@@ -3,25 +3,92 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
+    <TextView
+        android:text="@string/textMainTitle"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textMainTitle"
+        android:textColor="#ff003399"
+        android:typeface="normal"
+        android:textStyle="bold"
+        android:capitalize="none"
+        android:textAlignment="center" />
     <Button
         android:id="@+id/myButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hello" />
+    <TextView
+        android:text="@string/textGPSNote"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textGPSNote" />
+    <ImageView
+        android:src="@drawable/Icon"
+        android:layout_width="match_parent"
+        android:layout_height="270.2dp"
+        android:id="@+id/imageView1"
+        android:maxHeight="@android:dimen/thumbnail_height"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="@string/labelGPSPos"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/labelGPSPos" />
+        <TextView
+            android:text="@string/gpsOff"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/textGPSLat" />
+        <TextView
+            android:text="@string/gpsOff"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/textGPSLong" />
+    </LinearLayout>
     <Button
         android:id="@+id/myPhotos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/photos" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:orientation="vertical"
+        android:weightSum="4"
+        android:splitMotionEvents="true">
+        <TextView
+            android:text="@string/syncStatus_NothingToSync"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textSyncStatus"
+            android:layout_weight="2" />
+        <EditText
+            android:inputType="date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editCurentDate"
+            android:text="Date:"
+            android:layout_weight="2" />
+    </LinearLayout>
     <Button
         android:id="@+id/btnQuickAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/quickphotos" />
-    <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listView1" />
+        android:text="@string/syncNotAvailable" />
 </LinearLayout>

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Borrowpit List</string>
-	<string name="photos">Photo list</string>
-	<string name="app_name">Manage Borrow Pit Photos</string>
-	<string name="find_borrowpit">Find Borrow Pit</string>
+	<string name="hello">Manage Borrowpit Photos</string>
+	<string name="photos">Manage Closest Borrowpit</string>
+	<string name="app_name">Material Information Management System (MIMS)</string>
+	<string name="find_borrowpit">Manage Borrowpit Photos</string>
 	<string name="label_Roadno">ROAD NO</string>
 	<string name="label_BorrowpitName">B/Pit Name</string>
 	<string name="label_Id">ID</string>
@@ -12,6 +12,14 @@
 	<string name="button_Save"> Save </string>
 	<string name="quickphotos">Quick Add Photo</string>
 	<string name="label_photoCategory">Photo Caqtegory</string>
+	<string name="syncStatus_NothingToSync">No new photos to sync</string>
+	<string name="syncStatus_PhotosToSync">There are new photos to sync</string>
+
+	<string name="textGPSNote">This app requires your GPS to be on to to automatically find the nearest Borrow Pit</string>
+	<string name="textMainTitle">Borrowpit Photo Management System</string>
+	<string name="labelGPSPos">Current GPS Position</string>
+	<string name="gpsOff">No GPS Reading</string>
+	<string name="syncNotAvailable">Sync Now (Unavailable)</string>
 
 
 
