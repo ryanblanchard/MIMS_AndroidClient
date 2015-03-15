@@ -5,13 +5,18 @@
 	<string name="app_name">Manage Borrow Pit Photos</string>
 	<string name="find_borrowpit">Find Borrow Pit</string>
 	<string name="label_Roadno">ROAD NO</string>
+<<<<<<< HEAD
 	<string name="label_BorrowpitName">B/Pit Name</string>
 	<string name="label_Id">ID</string>
+=======
+	<string name="label_borrowPitName">Borrowpit</string>
+	<string name="label_borrowPitID">B/Pit ID</string>
 	<string name="label_ManagePhotos">Manage Borrowpit Photos</string>
 	<string name="button_TakePhoto">Add Photo</string>
 	<string name="button_Save"> Save </string>
 	<string name="quickphotos">Quick Add Photo</string>
 	<string name="label_photoCategory">Photo Caqtegory</string>
+>>>>>>> feat/FindBorrowPit
 
 
 

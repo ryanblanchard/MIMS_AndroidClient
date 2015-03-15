@@ -16,7 +16,11 @@ namespace MIMSPhotoUploader
 	public class BorrowpitListActivity : ListActivity
 	{
 
+<<<<<<< HEAD
 		//string[] items;
+
+=======
+>>>>>>> feat/FindBorrowPit
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);

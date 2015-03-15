@@ -8,6 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hello" />
+    <Button
+        android:id="@+id/myPhotos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/photos" />
+    <Button
+        android:id="@+id/btnQuickAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/quickphotos" />
     <ListView
         android:minWidth="25px"
         android:minHeight="25px"

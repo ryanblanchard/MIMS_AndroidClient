@@ -2,7 +2,7 @@
 using SQLite;
 using System.Collections.Generic;
 
-namespace MIMSPhotoUploader.Data
+namespace MIMSPhotoUploader
 {
 	[Table("MIMS_MATERIAL_SRC")]
 	public class MIMS_MATERIAL_SRC

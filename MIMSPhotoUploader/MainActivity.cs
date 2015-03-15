@@ -10,7 +10,8 @@ using SQLite;
 using System.IO;
 using Android.Graphics;
 using Java.IO;
-using MIMSPhotoUploader.Data;
+using MIMSPhotoUploader;
+using Android.Util;
 
 namespace MIMSPhotoUploader
 {
@@ -20,6 +21,8 @@ namespace MIMSPhotoUploader
 	public class MainActivity : Activity
 	{
 		int count = 1;
+		string tag = "MainActivity";
+
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -37,9 +40,23 @@ namespace MIMSPhotoUploader
 			Button button = FindViewById<Button> (Resource.Id.myButton);
 			
 			button.Click += delegate {
-
+				Log.Info(tag, "button.Click");
 				StartActivity(typeof(BorrowpitListActivity));
 
+			};
+
+			Button btnPhotos = FindViewById<Button> (Resource.Id.myPhotos);
+
+			btnPhotos.Click += delegate {
+				Log.Info(tag, "btnPhotos.Click");
+				StartActivity(typeof(AddPhotoActivity));
+			};
+
+			Button btnQuickAdd = FindViewById<Button> (Resource.Id.btnQuickAdd);
+
+			btnQuickAdd.Click += delegate {
+				Log.Info(tag, "btnQuickAdd.Click");
+				StartActivity(typeof(AddPhotoActivity));
 			};
 
 		}

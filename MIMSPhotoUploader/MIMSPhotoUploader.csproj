@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -51,11 +51,18 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\App.cs" />
-    <Compile Include="Data\MIMS_MATERIAL_SRC.cs" />
     <Compile Include="BorrowpitAdapter.cs" />
     <Compile Include="Data\dbBorrowPit.cs" />
     <Compile Include="Data\BorrowPit.cs" />
     <Compile Include="BorrowpitListActivity.cs" />
+    <Compile Include="PhotoAdapter.cs" />
+    <Compile Include="Data\MIMS_MATERIAL_SRC.cs" />
+    <Compile Include="PhotoListActivity.cs" />
+    <Compile Include="Data\Photo.cs" />
+    <Compile Include="Data\MIMS_UPL_PHOTO_CATEGORIES.cs" />
+    <Compile Include="Data\MIMS_UPLOADED_PHOTOS.cs" />
+    <Compile Include="AddPhotoActivity.cs" />
+    <Compile Include="HelperUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -74,7 +81,8 @@
     <AndroidResource Include="Resources\layout\BorrowPitListItem.XML" />
     <AndroidResource Include="Resources\layout\ImageListLayout.axml" />
     <AndroidResource Include="Resources\layout\ImageListItem.xml" />
-    <AndroidResource Include="Resources\layout\BorrowpitList.axml" />
+    <AndroidResource Include="Resources\layout\PhotoListItem.xml" />
+    <AndroidResource Include="Resources\layout\AddPhotoLayout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -85,5 +93,11 @@
       <Version>1.0.8.3</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\BaselineDB.s3db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <LogicalName>InitialDBFile</LogicalName>
+    </AndroidAsset>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MIMSPhotoUploader.Data
+namespace MIMSPhotoUploader
 {
 	public class BorrowPit
 	{
