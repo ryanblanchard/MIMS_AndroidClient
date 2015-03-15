@@ -14,15 +14,11 @@
             android:id="@+id/Text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FF7F3300"
-            android:textSize="20dip"
             android:textStyle="italic" />
         <TextView
             android:id="@+id/Text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14dip"
-            android:textColor="#FF267F00"
             android:paddingLeft="100dip" />
     </LinearLayout>
     <ImageView

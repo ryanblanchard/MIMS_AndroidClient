@@ -58,6 +58,17 @@ namespace MIMSPhotoUploader
 			listView.Adapter = new ImageListAdapter(this, tabItems);
 			listView.ItemClick += OnListItemClick; 
 
+
+			Button btnPhoto = FindViewById<Button> (Resource.Id.btnAddPhoto);
+			btnPhoto.Click += delegate {
+			
+				Log.Info (tag, "btnPhoto.Click");
+				Intent intent = new Intent (this, typeof(PhotoListActivity));
+				intent.PutExtra ("BorrowpitID", _borrowpitID);
+				StartActivity (intent);
+
+			};
+
 		}
 
 

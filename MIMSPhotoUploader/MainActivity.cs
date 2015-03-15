@@ -42,6 +42,9 @@ namespace MIMSPhotoUploader
 			TextView textGPSLat = FindViewById<TextView> (Resource.Id.textGPSLat);
 			TextView textGPSLong = FindViewById<TextView> (Resource.Id.textGPSLong);
 
+			TextView syncStatus = FindViewById<TextView> (Resource.Id.textSyncStatus);
+			EditText currDate = FindViewById<EditText> (Resource.Id.editCurentDate);
+			//currDate.EditText = DateTime.Now;
 
 
 			// Get our button from the layout resource,
@@ -50,7 +53,6 @@ namespace MIMSPhotoUploader
 			button.Click += delegate {
 				Log.Info(tag, "button.Click");
 				StartActivity(typeof(BorrowpitListActivity));
-
 			};
 
 			Button btnPhotos = FindViewById<Button> (Resource.Id.myPhotos);

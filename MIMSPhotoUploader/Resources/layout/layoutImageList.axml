@@ -9,10 +9,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#00000000"
-        android:textSize="30dp"
-        android:textColor="#FF267F00"
-        android:textStyle="bold"
-        android:padding="5dp" />
+        android:textColor="#ff003399"
+        android:padding="5dp"
+        android:textStyle="normal" />
     <Button
         android:text="@string/button_TakePhoto"
         android:layout_width="match_parent"

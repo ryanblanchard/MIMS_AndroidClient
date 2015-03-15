@@ -18,6 +18,9 @@
 	<string name="textGPSNote">This app requires your GPS to be on to to automatically find the nearest Borrow Pit</string>
 	<string name="textMainTitle">Borrowpit Photo Management System</string>
 	<string name="labelGPSPos">Current GPS Position</string>
+	<string name="gpsOff">No GPS Reading</string>
+	<string name="syncNotAvailable">Sync Now (Unavailable)</string>
+
 
 
 </resources>

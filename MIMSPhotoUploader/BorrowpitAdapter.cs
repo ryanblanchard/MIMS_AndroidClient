@@ -15,10 +15,11 @@ namespace MIMSPhotoUploader
 		Activity _activity;
 
 
-		public BorrowpitAdapter (Activity activity)
+		public BorrowpitAdapter (Activity activity, List<BorrowPit> data)
 		{
 			_activity = activity;
-			FillBorrowPits ();
+			_borrowpitList = data;
+			//FillBorrowPits ();
 		}
 
 

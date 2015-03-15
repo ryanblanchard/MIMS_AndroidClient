@@ -25,59 +25,70 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textGPSNote" />
+    <ImageView
+        android:src="@drawable/Icon"
+        android:layout_width="match_parent"
+        android:layout_height="270.2dp"
+        android:id="@+id/imageView1"
+        android:maxHeight="@android:dimen/thumbnail_height"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false" />
     <LinearLayout
-    		android:orientation="vertical"
-    		android:sumweight="5">
-	    <TextView
-	        android:text="Small Text"
-	        android:textAppearance="?android:attr/textAppearanceSmall"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:weight="1"
-	        android:id="@+id/labelGPSPos" />
-	    <TextView
-	        android:text="Small Text"
-	        android:textAppearance="?android:attr/textAppearanceSmall"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-			android:weight="2"
-	        android:id="@+id/textGPSLat" />
-	    <TextView
-	        android:text="Small Text"
-	        android:textAppearance="?android:attr/textAppearanceSmall"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:weight=-"2"
-	        android:id="@+id/textGPSLong" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="@string/labelGPSPos"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/labelGPSPos" />
+        <TextView
+            android:text="@string/gpsOff"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/textGPSLat" />
+        <TextView
+            android:text="@string/gpsOff"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/textGPSLong" />
     </LinearLayout>
-
     <Button
         android:id="@+id/myPhotos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/photos" />
-    <Button
-        android:id="@+id/btnQuickAdd"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/quickphotos" />
-    <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listView1" />
-    <LinearLayout>
+        android:id="@+id/linearLayout1"
+        android:orientation="vertical"
+        android:weightSum="4"
+        android:splitMotionEvents="true">
         <TextView
-            android:text="Small Text"
+            android:text="@string/syncStatus_NothingToSync"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textSyncStatus" />
+            android:id="@+id/textSyncStatus"
+            android:layout_weight="2" />
         <EditText
             android:inputType="date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editCurentDate" />
+            android:id="@+id/editCurentDate"
+            android:text="Date:"
+            android:layout_weight="2" />
     </LinearLayout>
+    <Button
+        android:id="@+id/btnQuickAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/syncNotAvailable" />
 </LinearLayout>

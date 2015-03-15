@@ -92,8 +92,8 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f050011
 			public const int btnPhoto = 2131034129;
 			
-			// aapt resource value: 0x7f05001f
-			public const int btnQuickAdd = 2131034143;
+			// aapt resource value: 0x7f050023
+			public const int btnQuickAdd = 2131034147;
 			
 			// aapt resource value: 0x7f050006
 			public const int btnSave = 2131034118;
@@ -122,14 +122,11 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f050012
 			public const int listPhotos = 2131034130;
 			
-			// aapt resource value: 0x7f050020
-			public const int listView1 = 2131034144;
-			
 			// aapt resource value: 0x7f05001b
 			public const int myButton = 2131034139;
 			
-			// aapt resource value: 0x7f05001e
-			public const int myPhotos = 2131034142;
+			// aapt resource value: 0x7f050020
+			public const int myPhotos = 2131034144;
 			
 			// aapt resource value: 0x7f050002
 			public const int spinCategory = 2131034114;
@@ -149,8 +146,14 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f05000e
 			public const int textCategoryName = 2131034126;
 			
-			// aapt resource value: 0x7f050023
-			public const int textFilename = 2131034147;
+			// aapt resource value: 0x7f050024
+			public const int textFilename = 2131034148;
+			
+			// aapt resource value: 0x7f05001e
+			public const int textGPSLat = 2131034142;
+			
+			// aapt resource value: 0x7f05001f
+			public const int textGPSLong = 2131034143;
 			
 			// aapt resource value: 0x7f05001c
 			public const int textGPSNote = 2131034140;
@@ -241,6 +244,9 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f040005
 			public const int find_borrowpit = 2130968581;
 			
+			// aapt resource value: 0x7f040013
+			public const int gpsOff = 2130968595;
+			
 			// aapt resource value: 0x7f040002
 			public const int hello = 2130968578;
 			
@@ -267,6 +273,9 @@ namespace MIMSPhotoUploader
 			
 			// aapt resource value: 0x7f04000c
 			public const int quickphotos = 2130968588;
+			
+			// aapt resource value: 0x7f040014
+			public const int syncNotAvailable = 2130968596;
 			
 			// aapt resource value: 0x7f04000e
 			public const int syncStatus_NothingToSync = 2130968590;
