@@ -63,6 +63,7 @@
     <Compile Include="Data\MIMS_UPLOADED_PHOTOS.cs" />
     <Compile Include="AddPhotoActivity.cs" />
     <Compile Include="HelperUtils.cs" />
+    <Compile Include="ImageListAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -83,6 +84,8 @@
     <AndroidResource Include="Resources\layout\ImageListItem.xml" />
     <AndroidResource Include="Resources\layout\PhotoListItem.xml" />
     <AndroidResource Include="Resources\layout\AddPhotoLayout.axml" />
+    <AndroidResource Include="Resources\layout\layoutImageList.axml" />
+    <AndroidResource Include="Resources\layout\layoutCustomView.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

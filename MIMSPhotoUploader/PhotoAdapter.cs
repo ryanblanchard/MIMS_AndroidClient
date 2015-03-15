@@ -63,6 +63,7 @@ namespace MIMSPhotoUploader
 				ph.category = p.CATEGORY_DESC;
 				ph.categoryId = p.CATEGORY_ID;
 				ph.uploaded = p.UPLOADED;
+				ph.fileName = p.PHOTO_FILENAME;
 				ph.image = p.PHOTO_DATA;
 				_photoList.Add (ph);
 
@@ -81,7 +82,11 @@ namespace MIMSPhotoUploader
 
 		public override Java.Lang.Object GetItem (int position) 
 		{
+			//Uri u = new Uri ();
+
 			return _photoList [position].fileName;
+			//return u;
+			 //return _photoList [position].fileName;
 		}
 
 		public override long GetItemId (int position) {
@@ -97,6 +102,9 @@ namespace MIMSPhotoUploader
 			var category = view.FindViewById<TextView> (Resource.Id.textCategory);
 			var filename = view.FindViewById<TextView> (Resource.Id.textFilename);
 			var CheckBox = view.FindViewById<CheckBox> (Resource.Id.checkUploaded);
+
+			//Android.Net.Uri contentUri = Android.Net.Uri.FromFile( GetItem(position));
+
 
 			//imageView.SetImageBitmap(_images [position]);
 			category.Text = _categories [position];

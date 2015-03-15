@@ -120,10 +120,13 @@ namespace MIMSPhotoUploader
 							spinCategory.SetSelection(0);
 							imageView.SetImageBitmap(null);
 							textPhotoUrl.Text = "";
-
 						}
-
-
+						catch (Exception ex)
+						{
+							Log.Error(tag,ex.Message);
+							Android.Widget.Toast.MakeText(this, "Error Inserting Image to Database", Android.Widget.ToastLength.Short).Show();
+						}
+							
 					} else {
 						Log.Info (tag, String.Format ("No Image loaded"));
 						//textMessage.Text = String.Format("No Photo to save.");		

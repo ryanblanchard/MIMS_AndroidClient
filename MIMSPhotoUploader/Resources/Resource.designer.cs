@@ -68,11 +68,32 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f050007
 			public const int BorrowPitName = 2131034119;
 			
+			// aapt resource value: 0x7f050017
+			public const int Heading = 2131034135;
+			
+			// aapt resource value: 0x7f050016
+			public const int Image = 2131034134;
+			
+			// aapt resource value: 0x7f050019
+			public const int List = 2131034137;
+			
+			// aapt resource value: 0x7f050013
+			public const int Text = 2131034131;
+			
+			// aapt resource value: 0x7f050014
+			public const int Text1 = 2131034132;
+			
+			// aapt resource value: 0x7f050015
+			public const int Text2 = 2131034133;
+			
+			// aapt resource value: 0x7f050018
+			public const int btnAddPhoto = 2131034136;
+			
 			// aapt resource value: 0x7f050011
 			public const int btnPhoto = 2131034129;
 			
-			// aapt resource value: 0x7f050015
-			public const int btnQuickAdd = 2131034133;
+			// aapt resource value: 0x7f05001c
+			public const int btnQuickAdd = 2131034140;
 			
 			// aapt resource value: 0x7f050006
 			public const int btnSave = 2131034118;
@@ -95,14 +116,14 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f050012
 			public const int listPhotos = 2131034130;
 			
-			// aapt resource value: 0x7f050016
-			public const int listView1 = 2131034134;
+			// aapt resource value: 0x7f05001d
+			public const int listView1 = 2131034141;
 			
-			// aapt resource value: 0x7f050013
-			public const int myButton = 2131034131;
+			// aapt resource value: 0x7f05001a
+			public const int myButton = 2131034138;
 			
-			// aapt resource value: 0x7f050014
-			public const int myPhotos = 2131034132;
+			// aapt resource value: 0x7f05001b
+			public const int myPhotos = 2131034139;
 			
 			// aapt resource value: 0x7f050002
 			public const int spinCategory = 2131034114;
@@ -122,8 +143,8 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f05000e
 			public const int textCategoryName = 2131034126;
 			
-			// aapt resource value: 0x7f050017
-			public const int textFilename = 2131034135;
+			// aapt resource value: 0x7f05001e
+			public const int textFilename = 2131034142;
 			
 			// aapt resource value: 0x7f050005
 			public const int textPhotoUri = 2131034117;
@@ -163,10 +184,16 @@ namespace MIMSPhotoUploader
 			public const int ImageListLayout = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int Main = 2130903045;
+			public const int layoutCustomView = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int PhotoListItem = 2130903046;
+			public const int layoutImageList = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int Main = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int PhotoListItem = 2130903048;
 			
 			static Layout()
 			{

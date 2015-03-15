@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Util;
 
 namespace MIMSPhotoUploader
 {
@@ -16,9 +17,14 @@ namespace MIMSPhotoUploader
 	public class BorrowpitListActivity : ListActivity
 	{
 
+		string tag = "Borrowpit List Activity";
+
+
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
+
+			Log.Info (tag, "On Create()");
 			ListAdapter = new BorrowpitAdapter (this);
 		}
 	}

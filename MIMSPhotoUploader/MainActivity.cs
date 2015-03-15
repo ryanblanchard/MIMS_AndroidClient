@@ -49,7 +49,7 @@ namespace MIMSPhotoUploader
 
 			btnPhotos.Click += delegate {
 				Log.Info(tag, "btnPhotos.Click");
-				StartActivity(typeof(AddPhotoActivity));
+				StartActivity(typeof(PhotoListActivity));
 			};
 
 			Button btnQuickAdd = FindViewById<Button> (Resource.Id.btnQuickAdd);
