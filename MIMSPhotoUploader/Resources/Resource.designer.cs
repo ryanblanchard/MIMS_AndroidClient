@@ -92,8 +92,8 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f050011
 			public const int btnPhoto = 2131034129;
 			
-			// aapt resource value: 0x7f05001c
-			public const int btnQuickAdd = 2131034140;
+			// aapt resource value: 0x7f05001f
+			public const int btnQuickAdd = 2131034143;
 			
 			// aapt resource value: 0x7f050006
 			public const int btnSave = 2131034118;
@@ -104,8 +104,14 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f05000f
 			public const int checkUploaded = 2131034127;
 			
+			// aapt resource value: 0x7f050022
+			public const int editCurentDate = 2131034146;
+			
 			// aapt resource value: 0x7f050004
 			public const int imageView1 = 2131034116;
+			
+			// aapt resource value: 0x7f05001d
+			public const int labelGPSPos = 2131034141;
 			
 			// aapt resource value: 0x7f05000d
 			public const int linearLayout1 = 2131034125;
@@ -116,14 +122,14 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f050012
 			public const int listPhotos = 2131034130;
 			
-			// aapt resource value: 0x7f05001d
-			public const int listView1 = 2131034141;
-			
-			// aapt resource value: 0x7f05001a
-			public const int myButton = 2131034138;
+			// aapt resource value: 0x7f050020
+			public const int listView1 = 2131034144;
 			
 			// aapt resource value: 0x7f05001b
-			public const int myPhotos = 2131034139;
+			public const int myButton = 2131034139;
+			
+			// aapt resource value: 0x7f05001e
+			public const int myPhotos = 2131034142;
 			
 			// aapt resource value: 0x7f050002
 			public const int spinCategory = 2131034114;
@@ -143,11 +149,20 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f05000e
 			public const int textCategoryName = 2131034126;
 			
-			// aapt resource value: 0x7f05001e
-			public const int textFilename = 2131034142;
+			// aapt resource value: 0x7f050023
+			public const int textFilename = 2131034147;
+			
+			// aapt resource value: 0x7f05001c
+			public const int textGPSNote = 2131034140;
+			
+			// aapt resource value: 0x7f05001a
+			public const int textMainTitle = 2131034138;
 			
 			// aapt resource value: 0x7f050005
 			public const int textPhotoUri = 2131034117;
+			
+			// aapt resource value: 0x7f050021
+			public const int textSyncStatus = 2131034145;
 			
 			// aapt resource value: 0x7f05000a
 			public const int textView1 = 2131034122;
@@ -229,6 +244,9 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f040002
 			public const int hello = 2130968578;
 			
+			// aapt resource value: 0x7f040012
+			public const int labelGPSPos = 2130968594;
+			
 			// aapt resource value: 0x7f040009
 			public const int label_ManagePhotos = 2130968585;
 			
@@ -249,6 +267,18 @@ namespace MIMSPhotoUploader
 			
 			// aapt resource value: 0x7f04000c
 			public const int quickphotos = 2130968588;
+			
+			// aapt resource value: 0x7f04000e
+			public const int syncStatus_NothingToSync = 2130968590;
+			
+			// aapt resource value: 0x7f04000f
+			public const int syncStatus_PhotosToSync = 2130968591;
+			
+			// aapt resource value: 0x7f040010
+			public const int textGPSNote = 2130968592;
+			
+			// aapt resource value: 0x7f040011
+			public const int textMainTitle = 2130968593;
 			
 			static String()
 			{

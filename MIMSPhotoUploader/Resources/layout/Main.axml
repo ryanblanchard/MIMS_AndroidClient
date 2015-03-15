@@ -3,11 +3,54 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
+    <TextView
+        android:text="@string/textMainTitle"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textMainTitle"
+        android:textColor="#ff003399"
+        android:typeface="normal"
+        android:textStyle="bold"
+        android:capitalize="none"
+        android:textAlignment="center" />
     <Button
         android:id="@+id/myButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hello" />
+    <TextView
+        android:text="@string/textGPSNote"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textGPSNote" />
+    <LinearLayout
+    		android:orientation="vertical"
+    		android:sumweight="5">
+	    <TextView
+	        android:text="Small Text"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:weight="1"
+	        android:id="@+id/labelGPSPos" />
+	    <TextView
+	        android:text="Small Text"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+			android:weight="2"
+	        android:id="@+id/textGPSLat" />
+	    <TextView
+	        android:text="Small Text"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:weight=-"2"
+	        android:id="@+id/textGPSLong" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/myPhotos"
         android:layout_width="match_parent"
@@ -24,4 +67,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/listView1" />
+    <LinearLayout>
+        <TextView
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textSyncStatus" />
+        <EditText
+            android:inputType="date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editCurentDate" />
+    </LinearLayout>
 </LinearLayout>
