@@ -1,9 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, Click Me!</string>
+	<string name="hello">Borrowpit List</string>
+	<string name="photos">Photo list</string>
 	<string name="app_name">Manage Borrow Pit Photos</string>
 	<string name="find_borrowpit">Find Borrow Pit</string>
 	<string name="label_Roadno">ROAD NO</string>
+	<string name="label_borrowPitName">Borrowpit</string>
+	<string name="label_borrowPitID">B/Pit ID</string>
+	<string name="label_ManagePhotos">Manage Borrowpit Photos</string>
+	<string name="button_TakePhoto">Add Photo</string>
+	<string name="button_Save"> Save </string>
+	<string name="quickphotos">Quick Add Photo</string>
+	<string name="label_photoCategory">Photo Caqtegory</string>
 
 
 

@@ -62,35 +62,77 @@ namespace MIMSPhotoUploader
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int BorrowPitId = 2131034113;
-			
-			// aapt resource value: 0x7f050003
-			public const int BorrowPitName = 2131034115;
-			
-			// aapt resource value: 0x7f050002
-			public const int BorrowPitNo = 2131034114;
-			
-			// aapt resource value: 0x7f050000
-			public const int list = 2131034112;
+			// aapt resource value: 0x7f050008
+			public const int BorrowPitId = 2131034120;
 			
 			// aapt resource value: 0x7f050007
-			public const int listBorrowPit = 2131034119;
+			public const int BorrowPitName = 2131034119;
 			
-			// aapt resource value: 0x7f050009
-			public const int listView1 = 2131034121;
+			// aapt resource value: 0x7f050011
+			public const int btnPhoto = 2131034129;
 			
-			// aapt resource value: 0x7f050008
-			public const int myButton = 2131034120;
+			// aapt resource value: 0x7f050015
+			public const int btnQuickAdd = 2131034133;
 			
 			// aapt resource value: 0x7f050006
-			public const int spinner1 = 2131034118;
+			public const int btnSave = 2131034118;
 			
-			// aapt resource value: 0x7f050005
-			public const int textView1 = 2131034117;
+			// aapt resource value: 0x7f050003
+			public const int btnTakePhoto = 2131034115;
+			
+			// aapt resource value: 0x7f05000f
+			public const int checkUploaded = 2131034127;
 			
 			// aapt resource value: 0x7f050004
-			public const int textView2 = 2131034116;
+			public const int imageView1 = 2131034116;
+			
+			// aapt resource value: 0x7f05000d
+			public const int linearLayout1 = 2131034125;
+			
+			// aapt resource value: 0x7f05000c
+			public const int listBorrowPit = 2131034124;
+			
+			// aapt resource value: 0x7f050012
+			public const int listPhotos = 2131034130;
+			
+			// aapt resource value: 0x7f050016
+			public const int listView1 = 2131034134;
+			
+			// aapt resource value: 0x7f050013
+			public const int myButton = 2131034131;
+			
+			// aapt resource value: 0x7f050014
+			public const int myPhotos = 2131034132;
+			
+			// aapt resource value: 0x7f050002
+			public const int spinCategory = 2131034114;
+			
+			// aapt resource value: 0x7f05000b
+			public const int spinner1 = 2131034123;
+			
+			// aapt resource value: 0x7f050000
+			public const int textBorrowPitName = 2131034112;
+			
+			// aapt resource value: 0x7f050010
+			public const int textBorrowpitName = 2131034128;
+			
+			// aapt resource value: 0x7f050001
+			public const int textCategory = 2131034113;
+			
+			// aapt resource value: 0x7f05000e
+			public const int textCategoryName = 2131034126;
+			
+			// aapt resource value: 0x7f050017
+			public const int textFilename = 2131034135;
+			
+			// aapt resource value: 0x7f050005
+			public const int textPhotoUri = 2131034117;
+			
+			// aapt resource value: 0x7f05000a
+			public const int textView1 = 2131034122;
+			
+			// aapt resource value: 0x7f050009
+			public const int textView2 = 2131034121;
 			
 			static Id()
 			{
@@ -106,7 +148,7 @@ namespace MIMSPhotoUploader
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int BorrowpitList = 2130903040;
+			public const int AddPhotoLayout = 2130903040;
 			
 			// aapt resource value: 0x7f030001
 			public const int BorrowPitListItem = 2130903041;
@@ -122,6 +164,9 @@ namespace MIMSPhotoUploader
 			
 			// aapt resource value: 0x7f030005
 			public const int Main = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int PhotoListItem = 2130903046;
 			
 			static Layout()
 			{
@@ -142,17 +187,41 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;
 			
-			// aapt resource value: 0x7f040003
-			public const int app_name = 2130968579;
-			
 			// aapt resource value: 0x7f040004
-			public const int find_borrowpit = 2130968580;
+			public const int app_name = 2130968580;
+			
+			// aapt resource value: 0x7f04000b
+			public const int button_Save = 2130968587;
+			
+			// aapt resource value: 0x7f04000a
+			public const int button_TakePhoto = 2130968586;
+			
+			// aapt resource value: 0x7f040005
+			public const int find_borrowpit = 2130968581;
 			
 			// aapt resource value: 0x7f040002
 			public const int hello = 2130968578;
 			
-			// aapt resource value: 0x7f040005
-			public const int label_Roadno = 2130968581;
+			// aapt resource value: 0x7f040009
+			public const int label_ManagePhotos = 2130968585;
+			
+			// aapt resource value: 0x7f040006
+			public const int label_Roadno = 2130968582;
+			
+			// aapt resource value: 0x7f040008
+			public const int label_borrowPitID = 2130968584;
+			
+			// aapt resource value: 0x7f040007
+			public const int label_borrowPitName = 2130968583;
+			
+			// aapt resource value: 0x7f04000d
+			public const int label_photoCategory = 2130968589;
+			
+			// aapt resource value: 0x7f040003
+			public const int photos = 2130968579;
+			
+			// aapt resource value: 0x7f04000c
+			public const int quickphotos = 2130968588;
 			
 			static String()
 			{

@@ -148,5 +148,19 @@ Global
 		$24.IncludeStaticEntities = True
 		$0.VersionControlPolicy = $26
 		$26.inheritsSet = Mono
+		$0.TextStylePolicy = $27
+		$27.inheritsSet = null
+		$27.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $28
+		$28.AfterDelegateDeclarationParameterComma = True
+		$28.inheritsSet = Mono
+		$28.inheritsScope = text/x-csharp
+		$28.scope = text/x-csharp
+		$0.TextStylePolicy = $29
+		$29.FileWidth = 120
+		$29.TabsToSpaces = False
+		$29.inheritsSet = VisualStudio
+		$29.inheritsScope = text/plain
+		$29.scope = text/plain
 	EndGlobalSection
 EndGlobal
