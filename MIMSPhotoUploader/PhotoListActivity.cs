@@ -63,7 +63,7 @@ namespace MIMSPhotoUploader
 			btnPhoto.Click += delegate {
 			
 				Log.Info (tag, "btnPhoto.Click");
-				Intent intent = new Intent (this, typeof(PhotoListActivity));
+				Intent intent = new Intent (this, typeof(AddPhotoActivity));
 				intent.PutExtra ("BorrowpitID", _borrowpitID);
 				StartActivity (intent);
 
