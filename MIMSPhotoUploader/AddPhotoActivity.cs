@@ -161,12 +161,15 @@ namespace MIMSPhotoUploader
 
 		private void spinCategory_ItemSelected (object sender, AdapterView.ItemSelectedEventArgs e)
 		{
+
 			Spinner spinner = (Spinner)sender;
+			if (spinner.SelectedItem != null)
+			{
+				string toast = string.Format ("The planet is {0}", spinner.GetItemAtPosition (e.Position));
 
-			string toast = string.Format ("The planet is {0}", spinner.GetItemAtPosition (e.Position));
-
-			PhotoCategoryDesc = spinner.SelectedItem.ToString ();  //GetItemAtPosition (e.Position);
-			Toast.MakeText (this, toast, ToastLength.Long).Show ();
+				PhotoCategoryDesc = spinner.SelectedItem.ToString ();  //GetItemAtPosition (e.Position);
+				Toast.MakeText (this, toast, ToastLength.Long).Show ();
+			}
 		}
 
 		private bool IsThereAnAppToTakePictures()
