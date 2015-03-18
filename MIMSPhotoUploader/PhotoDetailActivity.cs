@@ -23,7 +23,7 @@ namespace MIMSPhotoUploader
 		string borrowpitID;
 		string borrowpitName;
 
-		string tag = "PhotoDetailActivity";
+		string tag;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -40,6 +40,9 @@ namespace MIMSPhotoUploader
 				//photoId = Intent.GetStringExtra ("PhotoID") ?? "NO PHOTO REQUESTED";
 			}
 
+
+			tag = "PhotoDetailActivity";
+
 			List<string> from;
 
 			var db = dbBorrowPit.ConnectToDB ();
@@ -47,7 +50,7 @@ namespace MIMSPhotoUploader
 
 			from = new List<string> ();
 			foreach (var i in tab) {
-				from.Add (i.PHOTO_CATEGORY_DESC.ToString());
+				//from.Add (i.PHOTO_CATEGORY_DESC.ToString());
 				Log.Info (tag, "Desc = " + i.PHOTO_CATEGORY_DESC);
 			}
 
@@ -56,7 +59,7 @@ namespace MIMSPhotoUploader
 
 			ArrayAdapter _adapterFrom = new ArrayAdapter (this, Android.Resource.Layout.SimpleSpinnerItem, from);
 			_adapterFrom.SetDropDownViewResource (Android.Resource.Layout.SimpleSpinnerDropDownItem);
-			spinnerFrom.Adapter = _adapterFrom; 
+			//spinnerFrom.Adapter = _adapterFrom; 
 
 			spinnerFrom.ItemSelected += (object sender, AdapterView.ItemSelectedEventArgs e) => {
 				string toast = string.Format ("The planet is {0}",e.Position);

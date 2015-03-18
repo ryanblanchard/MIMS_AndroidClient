@@ -10,7 +10,7 @@ namespace MIMSPhotoUploader
 	public class dbBorrowPit
 	{
 
-		static string dbFileName = "GMSMobileDBv0p2.s3db";
+		public static string dbFileName = "GMSMobileDBv0p2.s3db";
 		static File DB_file;
 
 		public dbBorrowPit ()
@@ -45,11 +45,9 @@ namespace MIMSPhotoUploader
 				{
 					Log.Info("**** ConnectToDB (NOT exist) ****", App._dbFileName);
 
-					HelperUtils.CopyInitialDBtoFinal(dbFileName, DB_file.Path);
+					//HelperUtils.CopyInitialDBtoFinal(dbFileName, DB_file.Path);
 					Log.Info("**** Copy Initial Database File {0} to final target path {1}****", App._dbFileName,  DB_file.Path);
-
 				}
-
 	
 				var conn = new SQLiteConnection (App._dbFileName);
 				//conn.CreateTable<Stock> ();

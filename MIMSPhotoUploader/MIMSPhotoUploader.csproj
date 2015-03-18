@@ -103,7 +103,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <LogicalName>InitialDBFile</LogicalName>
     </AndroidAsset>
-    <AndroidAsset Include="Data\GMSMobileDBv0p2.s3db">
+    <AndroidAsset Include="Resources\GMSMobileDBv0p2.s3db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidAsset>
   </ItemGroup>

@@ -4,6 +4,7 @@ using System.IO;
 using Android.Util;
 using System.Runtime.Remoting.Contexts;
 using Android.Content;
+using Android.Content.Res;
 using Android.Runtime;
 using Android.Widget;
 
@@ -146,7 +147,7 @@ namespace MIMSPhotoUploader
 		return songImage;
 	}
 
-
+		/*
 		public static void CopyInitialDBtoFinal(string DatabaseFileNAme, string DatabaseFinalDirectory)
 		{
 			string dbName = DatabaseFileNAme;
@@ -154,8 +155,9 @@ namespace MIMSPhotoUploader
 			// Check if your DB has already been extracted.
 			if (!File.Exists(dbPath))
 			{
+				string src = System.IO.Path.Combine (cpath, dbName);
 				string cpath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
-				using (BinaryReader br = new BinaryReader(System.IO.Path.Combine(cpath, dbName)))
+				using (BinaryReader br = new BinaryReader(Assets.Open(dbName)))
 				{
 					using (BinaryWriter bw = new BinaryWriter(new FileStream(dbPath, FileMode.Create)))
 					{
@@ -169,7 +171,7 @@ namespace MIMSPhotoUploader
 				}
 			}
 			}
-
+		*/
 	}
 }
 

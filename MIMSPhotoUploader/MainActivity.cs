@@ -12,6 +12,8 @@ using Android.Graphics;
 using Java.IO;
 using MIMSPhotoUploader;
 using Android.Util;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MIMSPhotoUploader
 {
@@ -42,6 +44,13 @@ namespace MIMSPhotoUploader
 			userName = "Ryan";//TODO: BUild Login Screen
 
 
+			//copies the inital SQLite db out of Assets into the final folder 
+			var db = dbBorrowPit.ConnectToDB ();
+			if (db == null) {
+				Java.IO.File DB_file = new Java.IO.File (Android.OS.Environment.GetExternalStoragePublicDirectory (Android.OS.Environment.DirectoryDocuments), "MIMSBorrowpitPhotos_DATA");
+				CopyInitialDBtoFinal (dbBorrowPit.dbFileName, DB_file.Path);
+			}
+
 			TextView textMainTitle = FindViewById<TextView> (Resource.Id.textMainTitle);
 			TextView textGPSNote =  FindViewById<TextView> (Resource.Id.textGPSNote);
 
@@ -49,7 +58,18 @@ namespace MIMSPhotoUploader
 			TextView textGPSLat = FindViewById<TextView> (Resource.Id.textGPSLat);
 			TextView textGPSLong = FindViewById<TextView> (Resource.Id.textGPSLong);
 
+
+
 			TextView syncStatus = FindViewById<TextView> (Resource.Id.textSyncStatus);
+
+			if (CheckPendingUploads () > 0) {
+				syncStatus.Text = GetText (Resource.String.syncStatus_PhotosToSync);
+			} else {
+				syncStatus.Text = GetText (Resource.String.syncStatus_NothingToSync);
+			}
+
+
+
 			EditText currDate = FindViewById<EditText> (Resource.Id.editCurentDate);
 			currDate.Text = string.Format("{0:yyyy/MM/dd}", DateTime.Today);
 
@@ -80,6 +100,50 @@ namespace MIMSPhotoUploader
 				StartActivity(typeof(PhotoDetailActivity));
 			};
 
+
+			//CheckPendingUploads ();
+
+		}
+
+		public int CheckPendingUploads ()
+		{
+			var db = dbBorrowPit.ConnectToDB ();
+			List<MIMS_UPLOADED_PHOTOS> lst = (from i in db.Table<MIMS_UPLOADED_PHOTOS> () select i).ToList();
+			return lst.Count;
+		}
+
+
+		public  void CopyInitialDBtoFinal(string DatabaseFileNAme, string DatabaseFinalDirectory)
+		{
+			string dbName = DatabaseFileNAme;
+			string dbPath = System.IO.Path.Combine (DatabaseFinalDirectory, dbName);
+			// Check if your DB has already been extracted.
+			if (!System.IO.File.Exists(dbPath))
+			{
+	
+				string cpath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+				string src = System.IO.Path.Combine (cpath, dbName);
+				string src1 = System.IO.Path.Combine (cpath, "Assets", dbName);
+				string src2 = System.IO.Path.Combine (cpath, "Resources", dbName);
+				string src3 = System.IO.Path.Combine (dbName);
+				string src4 = System.IO.Path.Combine (cpath, dbName);
+				//(Stream)Assets.Open (dbName);
+
+				//var appdir = ApplicationContext.GetDir ("DATA");
+
+				using (BinaryReader br = new BinaryReader(Application.ApplicationContext.Resources.Assets.Open (dbName)))
+				{
+					using (BinaryWriter bw = new BinaryWriter(new FileStream(dbPath, FileMode.Create)))
+					{
+						byte[] buffer = new byte[2048];
+						int len = 0;
+						while ((len = br.Read(buffer, 0, buffer.Length)) > 0)
+						{
+							bw.Write (buffer, 0, len);
+						}
+					}
+				};
+			}
 		}
 
 	}
