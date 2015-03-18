@@ -34,10 +34,17 @@ namespace MIMSPhotoUploader
 
 		string PhotoCategoryDesc;
 
-
+		/*
 		int borrowpitId;
 		string borrowpitName;
 		string userName;
+		*/
+
+		string userName;
+		string roadNo;
+		string borrowpitID; 
+		string borrowpitName;
+		string photoId;
 
 		Button btnSave;
 
@@ -46,47 +53,67 @@ namespace MIMSPhotoUploader
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.AddPhotoLayout);
-/*
-			if (bundle != null) {
-				borrowpitId = bundle.GetInt ("BorrowpitID");
-				borrowpitName = bundle.GetString ("BorrowpitName");
-				userName = bundle.GetString ("UserName");
-			} else {
-				borrowpitId = 27; //TODO: find closest borrowpit via GPS
-				borrowpitName = "RYAN'S TEST BORROWPIT";
-				userName = "Dev";
+
+
+			if ( dbBorrowPit.IsNull(Intent.GetStringExtra ("BorrowpitName"), "") != "" )
+			{
+				//string userName = Intent.GetStringExtra ("UserName") ?? "No User Details";
+
+				userName =  Intent.GetStringExtra ("UserName")?? "No User Details";
+				roadNo=  Intent.GetStringExtra ("RoadNo")?? "No Road Details";
+				borrowpitID = Intent.GetStringExtra ("BorrowpitId") ?? "No Borrow Pit ID";;
+				borrowpitName =  Intent.GetStringExtra ("BorrowpitName") ?? "No BorrowPit Name";
+				photoId = Intent.GetStringExtra ("PhotoID") ?? "NO PHOTO REQUESTED";
 			}
-*/
+
+			if (photoId != null && photoId != "NO PHOTO REQUESTED") {
+				Log.Info (tag, "Photo with ID: {0} requested by intent.", photoId);
+				//Load Up existing photo info
+			} else {
+				//load the photo record from SQLIte
+			}
+	
+			TextView textBPitId = FindViewById<TextView> (Resource.Id.textBorrowPitID);
+			textBPitId.Text = borrowpitID;
+
+			TextView textBPName = FindViewById<TextView> (Resource.Id.textBorrowPitName);
+			textBPName.Text = borrowpitName;
+
 			CreateDirectoryForPictures();
 
-			borrowpitId = 27; //TODO: find closest borrowpit via GPS
-			borrowpitName = "RYAN'S TEST BORROWPIT";
-			userName = "Dev";
-
-
-
-			borrowpitText = FindViewById<TextView> (Resource.Id.textBorrowpitName);
-			//borrowpitText.Text = "Borrowpit :" + borrowpitName;
 			Log.Info (tag, string.Format ("Borrowpit Name = {0}", borrowpitName));
 
 			//TODO: Find the borrow pit description for display
 			textCategory = FindViewById<TextView> (Resource.Id.textCategoryName);
 
 
-
+			/*
 			list = GetPhotoCategories ();
+
+
+			ArrayAdapter<string> adapter = new ArrayAdapter <string> (this, Android.Resource.Layout.SimpleSpinnerDropDownItem);
+			foreach (string item in list) {
+				adapter.Add (PHOTO_CATEGORY_DESC);
+			}
+*/
+
+
 			spinCategory = FindViewById<Spinner> (Resource.Id.spinCategory);
 			spinCategory.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs> (spinCategory_ItemSelected);
 			//	var adapter = ArrayAdapter.CreateFromResource (this, Android.Resource.Layout.SimpleSpinnerItem);
 
 
 			ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>
-				(this, Android.Resource.Layout.SimpleSpinnerItem, list);
+				(this, Android.Resource.Layout.SimpleSpinnerItem);
 
 			dataAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerItem);
 			 
 			spinCategory.Adapter = dataAdapter;
 
+			dataAdapter.Insert ("12345", 0);
+			dataAdapter.Insert ("22222", 1);
+			dataAdapter.Insert ("33333", 2);
+			dataAdapter.Insert ("666666", 3);
 
 
 
@@ -122,7 +149,7 @@ namespace MIMSPhotoUploader
 							//var DB = new SQLiteConnection (App._dbFileName);
 
 							var im = new MIMS_UPLOADED_PHOTOS ();
-							im.BORROW_PIT_ID = borrowpitId; //TODO: pass the real borrowpit id
+							im.BORROW_PIT_ID = int.Parse(borrowpitID); //TODO: pass the real borrowpit id
 							im.USERNAME = userName; 
 							im.TRANSACTION_DATE = DateTime.Now;
 							im.PHOTO_FILENAME = App._file == null ? "No_Image" : App._file.Path;
@@ -163,11 +190,15 @@ namespace MIMSPhotoUploader
 		{
 
 			Spinner spinner = (Spinner)sender;
-			if (spinner.SelectedItem != null)
-			{
+			if (spinner != null) {
+
 				string toast = string.Format ("The planet is {0}", spinner.GetItemAtPosition (e.Position));
 
-				PhotoCategoryDesc = spinner.SelectedItem.ToString ();  //GetItemAtPosition (e.Position);
+				if (spinner.SelectedItem == null) {
+					spinner.SetSelection (0);
+				} else {
+					PhotoCategoryDesc = spinner.SelectedItem.ToString ();  //GetItemAtPosition (e.Position);
+				}
 				Toast.MakeText (this, toast, ToastLength.Long).Show ();
 			}
 		}
@@ -249,9 +280,11 @@ namespace MIMSPhotoUploader
 
 			var db = dbBorrowPit.ConnectToDB ();
 			var query = db.Table<MIMS_UPL_PHOTO_CATEGORIES> ();
-			foreach (var it in query) {
-				string PhotoCategory = it.PHOTO_CATEGORY_DESC;
-				list.Add (PhotoCategory);
+
+				foreach (var it in db.Table<MIMS_UPL_PHOTO_CATEGORIES> ()) {
+				Log.Info (tag,it.PHOTO_CATEGORY_DESC);
+					string PhotoCategory = it.PHOTO_CATEGORY_DESC;
+				list.Add (it.PHOTO_CATEGORY_DESC);
 			}
 
 			return list;

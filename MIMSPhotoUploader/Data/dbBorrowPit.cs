@@ -37,8 +37,6 @@ namespace MIMSPhotoUploader
 				
 				string folder = DB_file.Path;
 
-				Log.Info("SQLiteConnection", string.Format("Special Folder . Personal = {0}, " ,folder));
-
 				//folder = "/storage/emulated/0/";
 				App._dbFileName = System.IO.Path.Combine (folder, dbFileName);
 				Log.Info("ConnectToDB", App._dbFileName);
@@ -46,11 +44,10 @@ namespace MIMSPhotoUploader
 				if (!System.IO.File.Exists(App._dbFileName))
 				{
 					Log.Info("**** ConnectToDB (NOT exist) ****", App._dbFileName);
-					string cpath =System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
-					//string initdb = System.IO.Path.Combine(cpath,"Assets",  "BaseLineDB.s3db");
-					//System.IO.File.Copy(initdb,App._dbFileName);
 
-					//run create table scripts here
+					HelperUtils.CopyInitialDBtoFinal(dbFileName, DB_file.Path);
+					Log.Info("**** Copy Initial Database File {0} to final target path {1}****", App._dbFileName,  DB_file.Path);
+
 				}
 
 	
@@ -65,6 +62,36 @@ namespace MIMSPhotoUploader
 				return null;
 			}
 
+		}
+
+
+
+		public static string IsNull(object InputObject, string ReplaceString)
+		{
+			if (InputObject == null)
+				return ReplaceString;
+			else
+				return InputObject.ToString();
+		}
+
+		public decimal IsNull(object InputObject, decimal ReplacementNumber)
+		{
+			decimal returnVal;
+			if (InputObject == null)
+			{
+				return ReplacementNumber;
+			}
+			else
+			{
+				if (decimal.TryParse(InputObject.ToString(), out returnVal))
+				{
+					return returnVal;
+				}
+				else
+				{
+					return ReplacementNumber;
+				}
+			}
 		}
 
 	}

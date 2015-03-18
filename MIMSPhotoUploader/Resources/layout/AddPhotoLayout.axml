@@ -3,13 +3,28 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView
-        android:text="@string/label_borrowPitID"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textBorrowPitName"
-        android:layout_marginBottom="15dp" />
+        android:weightSum="4">
+        <TextView
+            android:text="@string/label_borrowPitID"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/textBorrowPitID"
+            android:layout_marginBottom="15dp" />
+        <TextView
+            android:text="@string/label_borrowPitName"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:id="@+id/textBorrowPitName"
+            android:layout_marginBottom="15dp" />
+    </LinearLayout>
     <TextView
         android:text="@string/label_photoCategory"
         android:textAppearance="?android:attr/textAppearanceMedium"

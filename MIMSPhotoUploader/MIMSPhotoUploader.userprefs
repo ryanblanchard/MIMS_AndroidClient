@@ -1,12 +1,25 @@
 ﻿<Properties StartupItem="MIMSPhotoUploader.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.AnotherDevice" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Resources\values\Strings.xml">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.x86_Nexus_7" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data\dbBorrowPit.cs">
     <Files>
-      <File FileName="Resources\values\Strings.xml" Line="1" Column="1" />
+      <File FileName="Resources\values\Strings.xml" Line="2" Column="2" />
+      <File FileName="g:\DEV\MIMS\MIMS_AndroidClient-develop\MIMS_AndroidClient-develop\MIMSPhotoUploader\AddPhotoActivity.cs" Line="4" Column="4" />
+      <File FileName="BorrowpitListActivity.cs" Line="36" Column="36" />
+      <File FileName="g:\DEV\MIMS\MIMS_AndroidClient-develop\MIMS_AndroidClient-develop\MIMSPhotoUploader\PhotoListActivity.cs" Line="1" Column="1" />
+      <File FileName="PhotoDetailActivity.cs" Line="41" Column="41" />
+      <File FileName="MainActivity.cs" Line="2" Column="2" />
+      <File FileName="Data\dbBorrowPit.cs" Line="3" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="g:\DEV\MIMS\MIMS_AndroidClient-develop\MIMS_AndroidClient-develop\MIMSPhotoUploader\AddPhotoActivity.cs" line="91" column="1" />
+      <Breakpoint file="g:\DEV\MIMS\MIMS_AndroidClient-develop\MIMS_AndroidClient-develop\MIMSPhotoUploader\AddPhotoActivity.cs" line="94" column="1" />
+      <Breakpoint file="G:\DEV\MIMS\MIMS_AndroidClient-develop\MIMS_AndroidClient-develop\MIMSPhotoUploader\BorrowpitListActivity.cs" line="58" column="1" />
+      <Breakpoint file="G:\DEV\MIMS\MIMS_AndroidClient-develop\MIMS_AndroidClient-develop\MIMSPhotoUploader\Data\dbBorrowPit.cs" line="75" column="1" />
+      <Breakpoint file="G:\DEV\MIMS\MIMS_AndroidClient-develop\MIMS_AndroidClient-develop\MIMSPhotoUploader\Data\dbBorrowPit.cs" line="48" column="1" />
+      <Breakpoint file="G:\DEV\MIMS\MIMS_AndroidClient-develop\MIMS_AndroidClient-develop\MIMSPhotoUploader\MainActivity.cs" line="67" column="26" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.MIMSPhotoUploader AndroidDesignerPreferredDevice="Nexus 4" />

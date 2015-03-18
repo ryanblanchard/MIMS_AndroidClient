@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
 	<string name="hello">Manage Borrowpit Photos</string>
 	<string name="photos">Manage Closest Borrowpit</string>
 	<string name="app_name">Material Information Management System (MIMS)</string>
 	<string name="find_borrowpit">Manage Borrowpit Photos</string>
 	<string name="label_Roadno">ROAD NO</string>
-	<string name="label_borrowPitName">B/Pit Name</string>
+	<string name="label_BorrowPitName">B/Pit Name</string>
 	<string name="label_Id">ID</string>
 	<string name="label_ManagePhotos">Manage Borrowpit Photos</string>
 	<string name="button_TakePhoto">Add Photo</string>
 	<string name="button_Save"> Save </string>
 	<string name="quickphotos">Quick Add Photo</string>
 	<string name="label_photoCategory">Select Photo Category</string>
+
 	<string name="syncStatus_NothingToSync">No new photos to sync</string>
 	<string name="syncStatus_PhotosToSync">There are new photos to sync</string>
 
@@ -22,8 +22,8 @@
 	<string name="gpsOff">No GPS Reading</string>
 	<string name="syncNotAvailable">Sync Now (Unavailable)</string>
 
-	<string name="label_borrowPitID">Borrowpit ID</string>
-
+	<string name="label_borrowPitID">Borrow pit ID</string>
+	<string name="label_borrowPitName">B/Pit Name</string>
 
 
 </resources>

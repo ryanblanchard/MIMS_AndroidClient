@@ -28,7 +28,7 @@
     <ImageView
         android:src="@drawable/Icon"
         android:layout_width="match_parent"
-        android:layout_height="200.5dp"
+        android:layout_height="270.2dp"
         android:id="@+id/imageView1"
         android:maxHeight="@android:dimen/thumbnail_height"
         android:adjustViewBounds="false"

@@ -2,11 +2,47 @@
 using Android.Graphics;
 using System.IO;
 using Android.Util;
+using System.Runtime.Remoting.Contexts;
+using Android.Content;
+using Android.Runtime;
+using Android.Widget;
 
 namespace MIMSPhotoUploader
 {
 	public static class HelperUtils
 	{
+
+		/*
+		public static void ShowToastMessage(Android.Content.Context context, string Message)
+		{
+			//context = getApplicationContext();
+			CharSequence text = "Hello toast!";
+			int duration = Toast.LENGTH_SHORT;
+
+			Toast toast = Toast.MakeText(context, text, duration);
+			toast.Show();
+		}
+		*/
+
+		/*
+		/// <summary>
+		/// Checks the db exists.
+		/// </summary>
+		/// <returns>The db exists.</returns>
+		public static string CheckDbExists()
+		{
+			File DB_file = new File(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDocuments), "MIMSBorrowpitPhotos_DATA");
+			if (!DB_file.Exists ()) {
+				return string.Format ("Database not found at at : {0}", DB_file);
+			}
+			else {
+				return string.Format ("Database found");
+			}
+		}
+		*/
+
+
+
 		/// <summary>
 		/// Calculates the size of the in sample.
 		/// </summary>
@@ -109,6 +145,30 @@ namespace MIMSPhotoUploader
 			songImage1.Recycle();
 		return songImage;
 	}
+
+
+		public static void CopyInitialDBtoFinal(string DatabaseFileNAme, string DatabaseFinalDirectory)
+		{
+			string dbName = DatabaseFileNAme;
+			string dbPath = System.IO.Path.Combine (DatabaseFinalDirectory, dbName);
+			// Check if your DB has already been extracted.
+			if (!File.Exists(dbPath))
+			{
+				string cpath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+				using (BinaryReader br = new BinaryReader(System.IO.Path.Combine(cpath, dbName)))
+				{
+					using (BinaryWriter bw = new BinaryWriter(new FileStream(dbPath, FileMode.Create)))
+					{
+						byte[] buffer = new byte[2048];
+						int len = 0;
+						while ((len = br.Read(buffer, 0, buffer.Length)) > 0)
+						{
+							bw.Write (buffer, 0, len);
+						}
+					}
+				}
+			}
+			}
 
 	}
 }

@@ -56,6 +56,7 @@ namespace MIMSPhotoUploader
 			Log.Info (tag, "OnlistItemClick");
 
 			var bp_ID = data [position].Id;
+			Log.Info (tag, "OnListItemClick Position {0}, ID {1}", bp_ID, position);
 
 			Intent intent = new Intent (this, typeof(PhotoListActivity));
 			intent.PutExtra ("BorrowpitID", bp_ID.ToString ());

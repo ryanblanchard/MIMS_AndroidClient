@@ -19,6 +19,15 @@ namespace MIMSPhotoUploader
 	{
 		ListView listView;
 
+
+		string userName;
+		string roadNo;
+		string borrowpitID; 
+		string borrowpitName; 
+		string photoId;
+
+
+
 		List<MIMS_UPLOADED_PHOTOS> tabItems;
 		Activity context;
 
@@ -30,18 +39,28 @@ namespace MIMSPhotoUploader
 			base.OnCreate (bundle);
 
 			//SetContentView (Resource.Layout.ImageListLayout);
+			if ( dbBorrowPit.IsNull(Intent.GetStringExtra ("BorrowpitName"), "") != "" )
+			{
+				//string userName = Intent.GetStringExtra ("UserName") ?? "No User Details";
+
+				userName =  Intent.GetStringExtra ("UserName")?? "No User Details";
+				roadNo =  Intent.GetStringExtra ("RoadNo")?? "No Road Details";
+				borrowpitID = Intent.GetStringExtra ("BorrowpitId") ?? "No Borrow Pit ID";;
+				borrowpitName =  Intent.GetStringExtra ("BorrowpitName") ?? "No BorrowPit Name";
+				photoId = Intent.GetStringExtra ("PhotoID") ?? "NO PHOTO REQUESTED";
+			}
 
 			SetContentView(Resource.Layout.layoutImageList); // loads the HomeScreen.axml as this activity's view
 			listView = FindViewById<ListView>(Resource.Id.List); // get reference to the ListView in the layout
 			// populate the listview with data
 			int Counter = 0;
 
-			tabItems = new List<MIMS_UPLOADED_PHOTOS> ();
+			//tabItems = new List<MIMS_UPLOADED_PHOTOS> ();
 
 			var db = dbBorrowPit.ConnectToDB ();
-			//var tab = db.Table<MIMS_UPLOADED_PHOTOS> ();
+			var tab = db.Table<MIMS_UPLOADED_PHOTOS> ();
 
-			var iQuery = db.Table<MIMS_UPLOADED_PHOTOS> ().Where (v => v.BORROW_PIT_ID == _borrowpitID);
+			var iQuery = db.Table<MIMS_UPLOADED_PHOTOS> ().Where (v => v.BORROW_PIT_ID.ToString() == borrowpitID);
 			foreach (var pg in iQuery) {
 				MIMS_UPLOADED_PHOTOS p = new MIMS_UPLOADED_PHOTOS ();
 				p.ID = pg.ID;
@@ -58,14 +77,21 @@ namespace MIMSPhotoUploader
 			listView.Adapter = new ImageListAdapter(this, tabItems);
 			listView.ItemClick += OnListItemClick; 
 
+			//****************/
 
 			Button btnPhoto = FindViewById<Button> (Resource.Id.btnAddPhoto);
 			btnPhoto.Click += delegate {
-			
+
 				Log.Info (tag, "btnPhoto.Click");
-				Intent intent = new Intent (this, typeof(AddPhotoActivity));
-				intent.PutExtra ("BorrowpitID", _borrowpitID);
-				StartActivity (intent);
+
+				Intent i = new Intent(this, typeof(AddPhotoActivity));
+				i.PutExtra("UserName",App._username);
+				i.PutExtra("RoadNo",roadNo);
+				i.PutExtra("BorrowpitId",borrowpitID);
+				i.PutExtra("BorrowpitName",borrowpitName);
+				i.PutExtra("PhotoID","0");
+
+				StartActivity(i);
 
 			};
 
