@@ -97,12 +97,17 @@ namespace MIMSPhotoUploader
 			spinCategory.Adapter = dataAdapter;
 
 
-			//Load categories				
+			//Load categories	
+			int i = 1;
+			dataAdapter.Insert ("<Select Category>", 0);
 			var db = dbBorrowPit.ConnectToDB ();
 			var qry = db.Table<MIMS_UPL_PHOTO_CATEGORIES> ();
+
+
 			foreach (var cat in qry) {
 				Log.Info ("Adding Category", cat.PHOTO_CATEGORY_DESCR);
-				dataAdapter.Insert (cat.PHOTO_CATEGORY_DESCR, cat.ID);
+				dataAdapter.Insert (cat.PHOTO_CATEGORY_DESCR, i);
+				i++;
 			}
 
 			//TODO: populate with description categories
@@ -135,15 +140,20 @@ namespace MIMSPhotoUploader
 
 							//var DB = new SQLiteConnection (App._dbFileName);
 
+							int bpID =  int.Parse(App._borrowPitID);
+							int geo_x = 0; //App._lat == null?0:App._lat;
+							int geo_y = 0;  //App._long == null?0:App._Long;
+							int catID = int.Parse(App._photoCategoryID);
+
 							var im = new MIMS_UPLOADED_PHOTOS ();
-							im.BORROW_PIT_ID = int.Parse(borrowpitID); //TODO: pass the real borrowpit id
-							im.USERNAME = userName; 
+							im.BORROW_PIT_ID = bpID; //TODO: pass the real borrowpit id
+							im.USERNAME = App._username; 
 							im.TRANSACTION_DATE = DateTime.Now;
 							im.PHOTO_FILENAME = App._file == null ? "No_Image" : App._file.Path;
 							im.UPLOADED = false;
-							im.DEGREES_DECIMAL_X = int.Parse(App._lat);
-							im.DEGREES_DECIMAL_Y = int.Parse(App._long);
-							im.CATEGORY_ID = int.Parse(App._photoCategoryID);
+							im.DEGREES_DECIMAL_X = geo_x; // int.Parse(App._lat);
+							im.DEGREES_DECIMAL_Y = geo_y; // int.Parse(App._long);
+							im.CATEGORY_ID = catID; //int.Parse(App._photoCategoryID);
 							im.CATEGORY_DESC = App._photoCategory;
 
 							var s = DB.Insert (im);
