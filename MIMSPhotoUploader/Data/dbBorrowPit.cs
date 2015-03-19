@@ -56,7 +56,8 @@ namespace MIMSPhotoUploader
 			} 
 			catch (Exception ex) 
 			{
-				Log.Info("**** ConnectToDB (Exception) **** {0}", ex.Message);
+				string tag = "Database Error";
+				Log.Info(tag,"**** ConnectToDB (Exception) Path = {0} **** {1}", App._dbFileName, ex.Message);
 				return null;
 			}
 

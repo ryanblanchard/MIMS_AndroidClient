@@ -64,6 +64,9 @@
     <Compile Include="HelperUtils.cs" />
     <Compile Include="ImageListAdapter.cs" />
     <Compile Include="PhotoDetailActivity.cs" />
+    <Compile Include="BorrowpitListActivity.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -87,6 +90,7 @@
     <AndroidResource Include="Resources\layout\layoutImageList.axml" />
     <AndroidResource Include="Resources\layout\layoutCustomView.axml" />
     <AndroidResource Include="Resources\layout\PhotoDetailActivity.axml" />
+    <AndroidResource Include="Resources\layout\layoutListItemTemplate.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -103,13 +107,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <LogicalName>InitialDBFile</LogicalName>
     </AndroidAsset>
-    <AndroidAsset Include="Resources\GMSMobileDBv0p2.s3db">
+    <AndroidAsset Include="Assets\GMSMobileDBv0p2.s3db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <LogicalName>dbBorrowpit</LogicalName>
     </AndroidAsset>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="BorrowpitListActivity.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 </Project>

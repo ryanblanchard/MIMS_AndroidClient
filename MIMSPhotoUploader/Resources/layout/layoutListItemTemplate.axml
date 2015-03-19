@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/BorrowPitListItem"
     android:orientation="horizontal"
-    android:weightSum="4"
+    android:weightSum="3"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:paddingLeft="8dp"
@@ -12,17 +11,16 @@
     <TextView
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/BorrowPitName"
-        android:layout_gravity="left" />
+        android:id="@+id/textView1" />
     <TextView
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_weight="3"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/BorrowPitId"
+        android:id="@+id/textView2"
         android:layout_gravity="right" />
 </LinearLayout>

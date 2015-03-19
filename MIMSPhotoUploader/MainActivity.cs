@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -19,12 +18,11 @@ namespace MIMSPhotoUploader
 {
 
 
-	[Activity (Label = "MIMSPhotoUploader", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "MIMSPhotoUploader", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait, MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 		int count = 1;
 		string tag = "MainActivity";
-
 
 		string userName;
 		string borrowpitID;
@@ -42,14 +40,17 @@ namespace MIMSPhotoUploader
 			}
 
 			userName = "Ryan";//TODO: BUild Login Screen
+			App._username = "DEVELOPER01";
+			App._date = DateTime.Now;
 
-
+			/*
 			//copies the inital SQLite db out of Assets into the final folder 
 			var db = dbBorrowPit.ConnectToDB ();
 			if (db == null) {
 				Java.IO.File DB_file = new Java.IO.File (Android.OS.Environment.GetExternalStoragePublicDirectory (Android.OS.Environment.DirectoryDocuments), "MIMSBorrowpitPhotos_DATA");
 				CopyInitialDBtoFinal (dbBorrowPit.dbFileName, DB_file.Path);
 			}
+			*/
 
 			TextView textMainTitle = FindViewById<TextView> (Resource.Id.textMainTitle);
 			TextView textGPSNote =  FindViewById<TextView> (Resource.Id.textGPSNote);
@@ -71,7 +72,7 @@ namespace MIMSPhotoUploader
 
 
 			EditText currDate = FindViewById<EditText> (Resource.Id.editCurentDate);
-			currDate.Text = string.Format("{0:yyyy/MM/dd}", DateTime.Today);
+			currDate.Text = string.Format("{0:yyyy/MM/dd}", App._date);
 
 
 			//currDate.EditText = DateTime.Now;
@@ -84,30 +85,51 @@ namespace MIMSPhotoUploader
 				Log.Info(tag, "button.Click");
 				//StartActivity(typeof(MIMSPhotoUploader.BorrowpitListActivity));
 
-				StartActivity(typeof(PhotoDetailActivity));
+				Intent intent = new Intent(this,typeof(BorrowpitListActivity));
+				intent.PutExtra("userName",userName);
+				intent.PutExtra("borrowpitID",borrowpitID);
+				intent.PutExtra("borrowpitName",borrowpitName);
+
+				StartActivity(intent);
 			};
+
+
 
 			Button btnPhotos = FindViewById<Button> (Resource.Id.myPhotos);
 			btnPhotos.Click += delegate {
 				Log.Info(tag, "btnPhotos.Click");
+
+				Intent intent = new Intent(this,typeof(BorrowpitListActivity));
+				intent.PutExtra("userName",userName);
+				intent.PutExtra("borrowpitID",borrowpitID);
+				intent.PutExtra("borrowpitName",borrowpitName);
+
 				StartActivity(typeof(PhotoListActivity));
 			};
 
 			Button btnQuickAdd = FindViewById<Button> (Resource.Id.btnQuickAdd);
 			btnQuickAdd.Click += delegate {
 				Log.Info(tag, "btnQuickAdd.Click");
+
+				Intent intent = new Intent(this,typeof(BorrowpitListActivity));
+				intent.PutExtra("userName",userName);
+				intent.PutExtra("borrowpitID",borrowpitID);
+				intent.PutExtra("borrowpitName",borrowpitName);
+
 				//StartActivity(typeof(AddPhotoActivity));
 				StartActivity(typeof(PhotoDetailActivity));
 			};
-
-
-			//CheckPendingUploads ();
-
 		}
 
 		public int CheckPendingUploads ()
 		{
+			Log.Info (tag, "Check Pending Uploads");
+
 			var db = dbBorrowPit.ConnectToDB ();
+			if (db == null) {
+				string toastMsg = string.Format ("No Database connected on {0}", App._dbFileName);
+				Toast.MakeText (this, toastMsg, ToastLength.Long);
+			}
 			List<MIMS_UPLOADED_PHOTOS> lst = (from i in db.Table<MIMS_UPLOADED_PHOTOS> () select i).ToList();
 			return lst.Count;
 		}

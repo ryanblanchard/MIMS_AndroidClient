@@ -8,7 +8,7 @@ namespace MIMSPhotoUploader
 	{	
 		[PrimaryKey]
 		public int ID  { get; set;}
-		public string PHOTO_CATEGORY_DESC  { get; set;}
+		public string PHOTO_CATEGORY_DESCR  { get; set;}
 		public string CREATED_BY { get; set;}
 		public DateTime CREATED_DATE { get; set;}
 		public string MODIFIED_BY { get; set;}

@@ -51,7 +51,7 @@ namespace MIMSPhotoUploader
 			from = new List<string> ();
 			foreach (var i in tab) {
 				//from.Add (i.PHOTO_CATEGORY_DESC.ToString());
-				Log.Info (tag, "Desc = " + i.PHOTO_CATEGORY_DESC);
+				Log.Info (tag, "Desc = " + i.PHOTO_CATEGORY_DESCR);
 			}
 
 	

@@ -74,10 +74,10 @@ namespace MIMSPhotoUploader
 			}
 	
 			TextView textBPitId = FindViewById<TextView> (Resource.Id.textBorrowPitID);
-			textBPitId.Text = borrowpitID;
+			textBPitId.Text = App._borrowPitID;
 
 			TextView textBPName = FindViewById<TextView> (Resource.Id.textBorrowPitName);
-			textBPName.Text = borrowpitName;
+			textBPName.Text = App._borrowpitName;
 
 			CreateDirectoryForPictures();
 
@@ -86,22 +86,8 @@ namespace MIMSPhotoUploader
 			//TODO: Find the borrow pit description for display
 			textCategory = FindViewById<TextView> (Resource.Id.textCategoryName);
 
-
-			/*
-			list = GetPhotoCategories ();
-
-
-			ArrayAdapter<string> adapter = new ArrayAdapter <string> (this, Android.Resource.Layout.SimpleSpinnerDropDownItem);
-			foreach (string item in list) {
-				adapter.Add (PHOTO_CATEGORY_DESC);
-			}
-*/
-
-
 			spinCategory = FindViewById<Spinner> (Resource.Id.spinCategory);
 			spinCategory.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs> (spinCategory_ItemSelected);
-			//	var adapter = ArrayAdapter.CreateFromResource (this, Android.Resource.Layout.SimpleSpinnerItem);
-
 
 			ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>
 				(this, Android.Resource.Layout.SimpleSpinnerItem);
@@ -110,13 +96,14 @@ namespace MIMSPhotoUploader
 			 
 			spinCategory.Adapter = dataAdapter;
 
-			dataAdapter.Insert ("12345", 0);
-			dataAdapter.Insert ("22222", 1);
-			dataAdapter.Insert ("33333", 2);
-			dataAdapter.Insert ("666666", 3);
 
-
-
+			//Load categories				
+			var db = dbBorrowPit.ConnectToDB ();
+			var qry = db.Table<MIMS_UPL_PHOTO_CATEGORIES> ();
+			foreach (var cat in qry) {
+				Log.Info ("Adding Category", cat.PHOTO_CATEGORY_DESCR);
+				dataAdapter.Insert (cat.PHOTO_CATEGORY_DESCR, cat.ID);
+			}
 
 			//TODO: populate with description categories
 
@@ -154,10 +141,10 @@ namespace MIMSPhotoUploader
 							im.TRANSACTION_DATE = DateTime.Now;
 							im.PHOTO_FILENAME = App._file == null ? "No_Image" : App._file.Path;
 							im.UPLOADED = false;
-							im.DEGREES_DECIMAL_X = 0;
-							im.DEGREES_DECIMAL_Y = 0;
-							im.CATEGORY_ID = 10;
-							im.CATEGORY_DESC = "Standard Image";
+							im.DEGREES_DECIMAL_X = int.Parse(App._lat);
+							im.DEGREES_DECIMAL_Y = int.Parse(App._long);
+							im.CATEGORY_ID = int.Parse(App._photoCategoryID);
+							im.CATEGORY_DESC = App._photoCategory;
 
 							var s = DB.Insert (im);
 
@@ -192,12 +179,15 @@ namespace MIMSPhotoUploader
 			Spinner spinner = (Spinner)sender;
 			if (spinner != null) {
 
+				App._photoCategory = spinner.GetItemAtPosition (e.Position).ToString();
+				App._photoCategoryID = spinner.GetItemIdAtPosition (e.Position).ToString();
+
 				string toast = string.Format ("The planet is {0}", spinner.GetItemAtPosition (e.Position));
 
 				if (spinner.SelectedItem == null) {
 					spinner.SetSelection (0);
 				} else {
-					PhotoCategoryDesc = spinner.SelectedItem.ToString ();  //GetItemAtPosition (e.Position);
+					PhotoCategoryDesc = spinner.GetItemAtPosition (e.Position).ToString();  //GetItemAtPosition (e.Position);
 				}
 				Toast.MakeText (this, toast, ToastLength.Long).Show ();
 			}
@@ -282,9 +272,9 @@ namespace MIMSPhotoUploader
 			var query = db.Table<MIMS_UPL_PHOTO_CATEGORIES> ();
 
 				foreach (var it in db.Table<MIMS_UPL_PHOTO_CATEGORIES> ()) {
-				Log.Info (tag,it.PHOTO_CATEGORY_DESC);
-					string PhotoCategory = it.PHOTO_CATEGORY_DESC;
-				list.Add (it.PHOTO_CATEGORY_DESC);
+				Log.Info (tag,it.PHOTO_CATEGORY_DESCR);
+					string PhotoCategory = it.PHOTO_CATEGORY_DESCR;
+				list.Add (it.PHOTO_CATEGORY_DESCR);
 			}
 
 			return list;

@@ -4,22 +4,46 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <TextView
-        android:id="@+id/Heading"
-        android:text="@string/app_name"
+        android:text="@string/textMainTitle"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textMainTitle"
+        android:textColor="#ff003399"
+        android:typeface="sans"
+        android:textStyle="bold"
+        android:capitalize="none"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:background="#ffdedede"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="8dp" />
+    <TextView
+        android:id="@+id/Borrowpit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#00000000"
-        android:textColor="#ff003399"
-        android:padding="5dp"
-        android:textStyle="normal" />
+        android:textStyle="normal"
+        android:text="@string/label_BorrowPitName"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp" />
+    <ListView
+        android:id="@+id/List"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#FFDAFF7F" />
     <Button
         android:text="@string/button_TakePhoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnAddPhoto" />
-    <ListView
-        android:id="@+id/List"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:cacheColorHint="#FFDAFF7F" />
+        android:id="@+id/btnAddPhoto"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp" />
 </LinearLayout>

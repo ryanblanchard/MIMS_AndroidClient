@@ -29,20 +29,20 @@ namespace MIMSPhotoUploader
 
 
 		List<MIMS_UPLOADED_PHOTOS> tabItems;
-		Activity context;
+		//Activity context;
 
-		int _borrowpitID = 27;
-		string tag = "PhotoListActivity";
+		string tag;
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
+			//context = Application.ApplicationContext.getApplicationContext ();
+			tag = "PhotoListActivity";
 
 			//SetContentView (Resource.Layout.ImageListLayout);
 			if ( dbBorrowPit.IsNull(Intent.GetStringExtra ("BorrowpitName"), "") != "" )
 			{
 				//string userName = Intent.GetStringExtra ("UserName") ?? "No User Details";
-
 				userName =  Intent.GetStringExtra ("UserName")?? "No User Details";
 				roadNo =  Intent.GetStringExtra ("RoadNo")?? "No Road Details";
 				borrowpitID = Intent.GetStringExtra ("BorrowpitId") ?? "No Borrow Pit ID";;
@@ -50,21 +50,25 @@ namespace MIMSPhotoUploader
 				photoId = Intent.GetStringExtra ("PhotoID") ?? "NO PHOTO REQUESTED";
 			}
 
+
+
 			SetContentView(Resource.Layout.layoutImageList); // loads the HomeScreen.axml as this activity's view
 			listView = FindViewById<ListView>(Resource.Id.List); // get reference to the ListView in the layout
 			// populate the listview with data
 			int Counter = 0;
 
-			//tabItems = new List<MIMS_UPLOADED_PHOTOS> ();
+			tabItems = new List<MIMS_UPLOADED_PHOTOS> ();
 
 			var db = dbBorrowPit.ConnectToDB ();
 			var tab = db.Table<MIMS_UPLOADED_PHOTOS> ();
 
-			var iQuery = db.Table<MIMS_UPLOADED_PHOTOS> ().Where (v => v.BORROW_PIT_ID.ToString() == borrowpitID);
+			int bpID = int.Parse (App._borrowPitID);
+
+			var iQuery = db.Table<MIMS_UPLOADED_PHOTOS> ().Where (v => v.BORROW_PIT_ID == bpID);
 			foreach (var pg in iQuery) {
 				MIMS_UPLOADED_PHOTOS p = new MIMS_UPLOADED_PHOTOS ();
 				p.ID = pg.ID;
-				p.BORROW_PIT_ID = _borrowpitID;
+				p.BORROW_PIT_ID = int.Parse(borrowpitID);
 				p.CATEGORY_DESC = pg.CATEGORY_DESC;
 				p.CATEGORY_ID = pg.CATEGORY_ID;
 				p.PHOTO_FILENAME = pg.PHOTO_FILENAME;
@@ -86,9 +90,9 @@ namespace MIMSPhotoUploader
 
 				Intent i = new Intent(this, typeof(AddPhotoActivity));
 				i.PutExtra("UserName",App._username);
-				i.PutExtra("RoadNo",roadNo);
+				i.PutExtra("RoadNo",App._roadNo);
 				i.PutExtra("BorrowpitId",borrowpitID);
-				i.PutExtra("BorrowpitName",borrowpitName);
+				i.PutExtra("BorrowpitName",App._borrowpitName);
 				i.PutExtra("PhotoID","0");
 
 				StartActivity(i);
@@ -103,14 +107,22 @@ namespace MIMSPhotoUploader
 		{
 			Log.Info(tag, "button.Click");
 
-			var listView = sender as ListView;
-			var t = tabItems[e.Position];
+			var lv = sender as ListView;
+			var t = tabItems [e.Position].ID;
+
+			App._photoID = tabItems [e.Position].ID.ToString ();
+			App._photoFileName = tabItems [e.Position].PHOTO_FILENAME;
+			App._photoCategory = tabItems [e.Position].CATEGORY_DESC;
 
 
-			//Android.Widget.Toast.MakeText(this, t.Heading, Android.Widget.ToastLength.Short).Show();
+			Intent intent = new Intent (Intent.ActionView);
 
-			//Log.Info(tag,  
-			
+			Java.IO.File f = new Java.IO.File (tabItems [e.Position].PHOTO_FILENAME);
+			intent.SetData(Android.Net.Uri.FromFile (f));
+
+			StartActivity (intent);
+			Log.Info ("Actionview", f.AbsolutePath);
+
 		}
 	}
 }

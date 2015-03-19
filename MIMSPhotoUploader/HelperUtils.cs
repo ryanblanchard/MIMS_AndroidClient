@@ -13,44 +13,7 @@ namespace MIMSPhotoUploader
 	public static class HelperUtils
 	{
 
-		/*
-		public static void ShowToastMessage(Android.Content.Context context, string Message)
-		{
-			//context = getApplicationContext();
-			CharSequence text = "Hello toast!";
-			int duration = Toast.LENGTH_SHORT;
 
-			Toast toast = Toast.MakeText(context, text, duration);
-			toast.Show();
-		}
-		*/
-
-		/*
-		/// <summary>
-		/// Checks the db exists.
-		/// </summary>
-		/// <returns>The db exists.</returns>
-		public static string CheckDbExists()
-		{
-			File DB_file = new File(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDocuments), "MIMSBorrowpitPhotos_DATA");
-			if (!DB_file.Exists ()) {
-				return string.Format ("Database not found at at : {0}", DB_file);
-			}
-			else {
-				return string.Format ("Database found");
-			}
-		}
-		*/
-
-
-
-		/// <summary>
-		/// Calculates the size of the in sample.
-		/// </summary>
-		/// <returns>The in sample size.</returns>
-		/// <param name="options">Options.</param>
-		/// <param name="reqWidth">Req width.</param>
-		/// <param name="reqHeight">Req height.</param>
 		public static int CalculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight)
 		{
 			// Raw height and width of image

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,14 +15,20 @@ namespace MIMSPhotoUploader
 	[Activity (Label = "Select Borrowpit", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait)]			
 	public class BorrowpitListActivity : ListActivity
 	{
-		string tag = "Borrowpit List Activity";
+
+		string userName;
+		string borrowpitID;
+		string borrowpitName;
+
+
+		string tag;
 		List<BorrowPit> data;
 
-		//string[] items;
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 			Log.Info (tag, "On Create()");
+			//EventLogTags = "Borrowpit List Activity";
 
 			data = FillBorrowPits ();
 
@@ -56,10 +61,15 @@ namespace MIMSPhotoUploader
 			Log.Info (tag, "OnlistItemClick");
 
 			var bp_ID = data [position].Id;
-			Log.Info (tag, "OnListItemClick Position {0}, ID {1}", bp_ID, position);
+	
+			Log.Info (tag, "OnListItemClick Position {0}, ID {1}",  position, bp_ID);
+
+			App._borrowPitID = data [position].Id.ToString ();
+			App._borrowpitName = data [position].BorrowpitName;
+			App._roadNo = data [position].RoadNo;
 
 			Intent intent = new Intent (this, typeof(PhotoListActivity));
-			intent.PutExtra ("BorrowpitID", bp_ID.ToString ());
+			intent.PutExtra ("BorrowpitID", bp_ID);
 			intent.PutExtra ("BorrowpitName", data [position].BorrowpitName);
 
 			StartActivity(intent);
