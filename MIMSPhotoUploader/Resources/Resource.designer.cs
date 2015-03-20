@@ -50,7 +50,10 @@ namespace MIMSPhotoUploader
 			public const int borrowpit = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Icon = 2130837505;
+			public const int headingBackground = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int Icon = 2130837506;
 			
 			static Drawable()
 			{
@@ -65,38 +68,38 @@ namespace MIMSPhotoUploader
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f05000b
-			public const int BorrowPitId = 2131034123;
+			// aapt resource value: 0x7f050011
+			public const int BorrowPitId = 2131034129;
 			
-			// aapt resource value: 0x7f050009
-			public const int BorrowPitListItem = 2131034121;
+			// aapt resource value: 0x7f05000f
+			public const int BorrowPitListItem = 2131034127;
 			
-			// aapt resource value: 0x7f05000a
-			public const int BorrowPitName = 2131034122;
+			// aapt resource value: 0x7f050010
+			public const int BorrowPitName = 2131034128;
 			
-			// aapt resource value: 0x7f050019
-			public const int Borrowpit = 2131034137;
+			// aapt resource value: 0x7f05001d
+			public const int Borrowpit = 2131034141;
 			
-			// aapt resource value: 0x7f050018
-			public const int Image = 2131034136;
+			// aapt resource value: 0x7f05001c
+			public const int Image = 2131034140;
+			
+			// aapt resource value: 0x7f05001e
+			public const int List = 2131034142;
 			
 			// aapt resource value: 0x7f05001a
-			public const int List = 2131034138;
-			
-			// aapt resource value: 0x7f050016
-			public const int Text = 2131034134;
-			
-			// aapt resource value: 0x7f050017
-			public const int Text1 = 2131034135;
+			public const int Text = 2131034138;
 			
 			// aapt resource value: 0x7f05001b
-			public const int btnAddPhoto = 2131034139;
+			public const int Text1 = 2131034139;
 			
-			// aapt resource value: 0x7f050014
-			public const int btnPhoto = 2131034132;
+			// aapt resource value: 0x7f05001f
+			public const int btnAddPhoto = 2131034143;
 			
-			// aapt resource value: 0x7f05002a
-			public const int btnQuickAdd = 2131034154;
+			// aapt resource value: 0x7f050018
+			public const int btnPhoto = 2131034136;
+			
+			// aapt resource value: 0x7f05002e
+			public const int btnQuickAdd = 2131034158;
 			
 			// aapt resource value: 0x7f050008
 			public const int btnSave = 2131034120;
@@ -104,53 +107,65 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f050005
 			public const int btnTakePhoto = 2131034117;
 			
-			// aapt resource value: 0x7f050012
-			public const int checkUploaded = 2131034130;
+			// aapt resource value: 0x7f050016
+			public const int checkUploaded = 2131034134;
 			
-			// aapt resource value: 0x7f050029
-			public const int editCurentDate = 2131034153;
+			// aapt resource value: 0x7f05002d
+			public const int editCurentDate = 2131034157;
 			
-			// aapt resource value: 0x7f050021
-			public const int imagePhoto = 2131034145;
+			// aapt resource value: 0x7f05000e
+			public const int imageButton2 = 2131034126;
+			
+			// aapt resource value: 0x7f050025
+			public const int imagePhoto = 2131034149;
 			
 			// aapt resource value: 0x7f050006
 			public const int imageView1 = 2131034118;
 			
-			// aapt resource value: 0x7f050025
-			public const int labelGPSPos = 2131034149;
+			// aapt resource value: 0x7f05000a
+			public const int imgButBackHome = 2131034122;
 			
-			// aapt resource value: 0x7f050010
-			public const int linearLayout1 = 2131034128;
+			// aapt resource value: 0x7f050029
+			public const int labelGPSPos = 2131034153;
 			
-			// aapt resource value: 0x7f05001d
-			public const int linearLayout3 = 2131034141;
+			// aapt resource value: 0x7f05000b
+			public const int linearLayout1 = 2131034123;
 			
-			// aapt resource value: 0x7f05001e
-			public const int linearLayout4 = 2131034142;
-			
-			// aapt resource value: 0x7f05001f
-			public const int linearLayout5 = 2131034143;
-			
-			// aapt resource value: 0x7f05001c
-			public const int linearLayoutMain = 2131034140;
-			
-			// aapt resource value: 0x7f05000f
-			public const int listBorrowPit = 2131034127;
-			
-			// aapt resource value: 0x7f050015
-			public const int listPhotos = 2131034133;
+			// aapt resource value: 0x7f050021
+			public const int linearLayout3 = 2131034145;
 			
 			// aapt resource value: 0x7f050022
-			public const int myButton = 2131034146;
+			public const int linearLayout4 = 2131034146;
 			
-			// aapt resource value: 0x7f050027
-			public const int myPhotos = 2131034151;
+			// aapt resource value: 0x7f050023
+			public const int linearLayout5 = 2131034147;
+			
+			// aapt resource value: 0x7f050009
+			public const int linearLayoutHeading = 2131034121;
+			
+			// aapt resource value: 0x7f050020
+			public const int linearLayoutMain = 2131034144;
+			
+			// aapt resource value: 0x7f050014
+			public const int listBorrowPit = 2131034132;
+			
+			// aapt resource value: 0x7f050019
+			public const int listPhotos = 2131034137;
+			
+			// aapt resource value: 0x7f050026
+			public const int myButton = 2131034150;
+			
+			// aapt resource value: 0x7f05002b
+			public const int myPhotos = 2131034155;
 			
 			// aapt resource value: 0x7f050004
 			public const int spinCategory = 2131034116;
 			
-			// aapt resource value: 0x7f05000e
-			public const int spinner1 = 2131034126;
+			// aapt resource value: 0x7f050013
+			public const int spinner1 = 2131034131;
+			
+			// aapt resource value: 0x7f05000c
+			public const int textAppTitle = 2131034124;
 			
 			// aapt resource value: 0x7f050001
 			public const int textBorrowPitID = 2131034113;
@@ -158,29 +173,29 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f050002
 			public const int textBorrowPitName = 2131034114;
 			
-			// aapt resource value: 0x7f050020
-			public const int textBorrowpit = 2131034144;
+			// aapt resource value: 0x7f050024
+			public const int textBorrowpit = 2131034148;
 			
-			// aapt resource value: 0x7f050013
-			public const int textBorrowpitName = 2131034131;
+			// aapt resource value: 0x7f050017
+			public const int textBorrowpitName = 2131034135;
 			
 			// aapt resource value: 0x7f050003
 			public const int textCategory = 2131034115;
 			
-			// aapt resource value: 0x7f050011
-			public const int textCategoryName = 2131034129;
+			// aapt resource value: 0x7f050015
+			public const int textCategoryName = 2131034133;
 			
-			// aapt resource value: 0x7f05002b
-			public const int textFilename = 2131034155;
+			// aapt resource value: 0x7f05002f
+			public const int textFilename = 2131034159;
 			
-			// aapt resource value: 0x7f050026
-			public const int textGPSLat = 2131034150;
+			// aapt resource value: 0x7f05002a
+			public const int textGPSLat = 2131034154;
 			
-			// aapt resource value: 0x7f050024
-			public const int textGPSLong = 2131034148;
+			// aapt resource value: 0x7f050028
+			public const int textGPSLong = 2131034152;
 			
-			// aapt resource value: 0x7f050023
-			public const int textGPSNote = 2131034147;
+			// aapt resource value: 0x7f050027
+			public const int textGPSNote = 2131034151;
 			
 			// aapt resource value: 0x7f050000
 			public const int textMainTitle = 2131034112;
@@ -188,14 +203,14 @@ namespace MIMSPhotoUploader
 			// aapt resource value: 0x7f050007
 			public const int textPhotoUri = 2131034119;
 			
-			// aapt resource value: 0x7f050028
-			public const int textSyncStatus = 2131034152;
+			// aapt resource value: 0x7f05002c
+			public const int textSyncStatus = 2131034156;
 			
 			// aapt resource value: 0x7f05000d
 			public const int textView1 = 2131034125;
 			
-			// aapt resource value: 0x7f05000c
-			public const int textView2 = 2131034124;
+			// aapt resource value: 0x7f050012
+			public const int textView2 = 2131034130;
 			
 			static Id()
 			{
@@ -214,37 +229,43 @@ namespace MIMSPhotoUploader
 			public const int AddPhotoLayout = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int BorrowPitListItem = 2130903041;
+			public const int BorrowpitHome = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int FindBorrowpit = 2130903042;
+			public const int BorrowPitListItem = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ImageListItem = 2130903043;
+			public const int FindBorrowpit = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int ImageListLayout = 2130903044;
+			public const int ImageListItem = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int layoutCustomView = 2130903045;
+			public const int ImageListLayout = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int layoutImageList = 2130903046;
+			public const int layoutCustomView = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int layoutListItemTemplate = 2130903047;
+			public const int layoutImageList = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int layoutSinglePhoto = 2130903048;
+			public const int layoutListItemTemplate = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int Main = 2130903049;
+			public const int layoutSinglePhoto = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int PhotoDetailActivity = 2130903050;
+			public const int Main = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int PhotoListItem = 2130903051;
+			public const int PhotoDetailActivity = 2130903051;
+			
+			// aapt resource value: 0x7f03000c
+			public const int PhotoListItem = 2130903052;
+			
+			// aapt resource value: 0x7f03000d
+			public const int viewHead = 2130903053;
 			
 			static Layout()
 			{

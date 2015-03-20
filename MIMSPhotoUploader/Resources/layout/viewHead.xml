@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/linearLayoutHeading"
+    android:weightSum="8"
+    android:background="@drawable/headingBackground">
+    <ImageButton
+        android:src="@android:drawable/ic_media_rew"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/imgButBackHome"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Borrow pit photos (MIMS)"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/textAppTitle"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <TextView
+                android:text="Borrow Pit No:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:textSize="12dp"
+                android:layout_marginLeft="5dp" />
+            <TextView
+                android:text="DR045/16.2/L/100/A"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:textSize="12dp"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageButton
+        android:src="@android:drawable/ic_menu_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/imageButton2"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+</LinearLayout>

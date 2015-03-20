@@ -3,29 +3,8 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView
-        android:text="@string/textMainTitle"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textMainTitle"
-        android:textColor="#ff003399"
-        android:typeface="sans"
-        android:textStyle="bold"
-        android:capitalize="none"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:textAllCaps="true"
-        android:background="#ffdedede" />
-    <Button
-        android:id="@+id/myButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="5dp"
-        android:layout_margin="5dp" />
+    <include
+        layout="@layout/viewHead" />
     <TextView
         android:text="@string/textGPSNote"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -35,6 +14,24 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="5dp" />
+    <Button
+        android:id="@+id/myButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_margin="5dp" />
+    <Button
+        android:id="@+id/myPhotos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/photos"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp" />
     <ImageView
         android:src="@drawable/borrowpit"
@@ -81,41 +78,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
-    <Button
-        android:id="@+id/myPhotos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/photos"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1"
         android:orientation="vertical"
         android:weightSum="4"
-        android:splitMotionEvents="true">
-        <TextView
-            android:text="@string/syncStatus_NothingToSync"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textSyncStatus"
-            android:layout_weight="2" />
-        <EditText
-            android:inputType="date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editCurentDate"
-            android:text="Date:"
-            android:layout_weight="2"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp" />
-    </LinearLayout>
+        android:splitMotionEvents="true"
+        android:minWidth="25px"
+        android:minHeight="25px" />
     <Button
         android:id="@+id/btnQuickAdd"
         android:layout_width="match_parent"

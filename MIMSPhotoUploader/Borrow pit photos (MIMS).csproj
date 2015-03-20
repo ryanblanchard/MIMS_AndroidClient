@@ -96,10 +96,14 @@
     <AndroidResource Include="Resources\layout\layoutListItemTemplate.axml" />
     <AndroidResource Include="Resources\layout\layoutSinglePhoto.axml" />
     <AndroidResource Include="Resources\drawable-hdpi\borrowpit.jpg" />
+    <AndroidResource Include="Resources\layout\BorrowpitHome.axml" />
+    <AndroidResource Include="Resources\drawable\headingBackground.xml" />
+    <AndroidResource Include="Resources\layout\viewHead.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="sqlite-net">
