@@ -21,12 +21,9 @@ namespace MIMSPhotoUploader
 	[Activity (Label = "MIMSPhotoUploader", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait, MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
 		string tag = "MainActivity";
 
 		string userName;
-		string borrowpitID;
-		string borrowpitName;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -86,10 +83,6 @@ namespace MIMSPhotoUploader
 				//StartActivity(typeof(MIMSPhotoUploader.BorrowpitListActivity));
 
 				Intent intent = new Intent(this,typeof(BorrowpitListActivity));
-				intent.PutExtra("userName",userName);
-				intent.PutExtra("borrowpitID",borrowpitID);
-				intent.PutExtra("borrowpitName",borrowpitName);
-
 				StartActivity(intent);
 			};
 
@@ -100,10 +93,6 @@ namespace MIMSPhotoUploader
 				Log.Info(tag, "btnPhotos.Click");
 
 				Intent intent = new Intent(this,typeof(BorrowpitListActivity));
-				intent.PutExtra("userName",userName);
-				intent.PutExtra("borrowpitID",borrowpitID);
-				intent.PutExtra("borrowpitName",borrowpitName);
-
 				StartActivity(typeof(PhotoListActivity));
 			};
 
@@ -112,11 +101,6 @@ namespace MIMSPhotoUploader
 				Log.Info(tag, "btnQuickAdd.Click");
 
 				Intent intent = new Intent(this,typeof(BorrowpitListActivity));
-				intent.PutExtra("userName",userName);
-				intent.PutExtra("borrowpitID",borrowpitID);
-				intent.PutExtra("borrowpitName",borrowpitName);
-
-				//StartActivity(typeof(AddPhotoActivity));
 				StartActivity(typeof(PhotoDetailActivity));
 			};
 		}

@@ -19,15 +19,6 @@ namespace MIMSPhotoUploader
 	{
 		ListView listView;
 
-
-		string userName;
-		string roadNo;
-		string borrowpitID; 
-		string borrowpitName; 
-		string photoId;
-
-
-
 		List<MIMS_UPLOADED_PHOTOS> tabItems;
 		//Activity context;
 
@@ -99,12 +90,6 @@ namespace MIMSPhotoUploader
 				App._photoCategoryID = "0";
 
 				Intent i = new Intent(this, typeof(AddPhotoActivity));
-/*				i.PutExtra("UserName",App._username);
-				i.PutExtra("RoadNo",App._roadNo);
-				i.PutExtra("BorrowpitId",borrowpitID);
-				i.PutExtra("BorrowpitName",App._borrowpitName);
-				i.PutExtra("PhotoID","0");
-*/
 				StartActivity(i);
 
 			};
@@ -125,13 +110,9 @@ namespace MIMSPhotoUploader
 			App._photoCategory = tabItems [e.Position].CATEGORY_DESC;
 			App._photoCategoryID = tabItems [e.Position].CATEGORY_ID.ToString();
 
-			Intent intent = new Intent (Intent.ActionView);
-
-			Java.IO.File f = new Java.IO.File (tabItems [e.Position].PHOTO_FILENAME);
-			intent.SetData(Android.Net.Uri.FromFile (f));
-
+			Intent intent = new Intent (this, typeof(SinglePhotoActivity));
 			StartActivity (intent);
-			Log.Info ("Actionview", f.AbsolutePath);
+			Log.Info ("Actionview", App._photoFileName);
 
 		}
 	}

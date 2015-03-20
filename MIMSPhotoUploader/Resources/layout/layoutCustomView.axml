@@ -2,7 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:background="#ff2a1b1b"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingLeft="5dp"
+    android:outlineProvider="bounds"
+    android:fadingEdge="horizontal">
     <LinearLayout
         android:id="@+id/Text"
         android:orientation="vertical"
@@ -12,19 +18,18 @@
             android:id="@+id/Text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:text="Category Description" />
-        <TextView
-            android:id="@+id/Text2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Not Uploaded"
-            android:layout_gravity="left" />
+            android:textStyle="bold"
+            android:text="Category Description"
+            android:textSize="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="5dp" />
     </LinearLayout>
     <ImageView
         android:id="@+id/Image"
         android:padding="5dp"
-        android:src="@drawable/icon"
+        android:src="@android:drawable/ic_menu_gallery"
         android:layout_alignParentRight="true"
         android:maxWidth="60dp"
         android:layout_marginLeft="5dp"

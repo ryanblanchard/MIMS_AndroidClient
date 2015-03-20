@@ -9,7 +9,13 @@
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:id="@+id/linearLayout3"
-        p1:weightSum="6">
+        p1:weightSum="6"
+        p1:showDividers="end"
+        p1:dividerPadding="5dp"
+        p1:layout_marginLeft="8dp"
+        p1:layout_marginTop="5dp"
+        p1:layout_marginRight="8dp"
+        p1:layout_marginBottom="8dp">
         <LinearLayout
             p1:orientation="vertical"
             p1:layout_width="wrap_content"
@@ -41,14 +47,15 @@
                 p1:textAppearance="?android:attr/textAppearanceMedium"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
-                p1:id="@+id/textBorrowpit" />
+                p1:id="@+id/textBorrowpit"
+                p1:textStyle="bold" />
             <TextView
                 p1:text="Image Category"
                 p1:textAppearance="?android:attr/textAppearanceMedium"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:id="@+id/textCategory"
-                p1:textStyle="italic" />
+                p1:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
     <ImageView
@@ -56,5 +63,6 @@
         p1:layout_width="match_parent"
         p1:layout_height="match_parent"
         p1:id="@+id/imagePhoto"
-        p1:layout_margin="5dp" />
+        p1:layout_margin="5dp"
+        p1:outlineProvider="paddedBounds" />
 </LinearLayout>
