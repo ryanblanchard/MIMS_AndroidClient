@@ -101,40 +101,11 @@ namespace MIMSPhotoUploader
 
 			Bitmap songImage1 = BitmapFactory.DecodeFile (filePath, options);
 
-
-		//DecodeByteArray(thumbnail,0, thumbnail.length,options);//Decode image, "thumbnail" is the object of image fil
-
-		//Bitmap songImage1 = BitmapFactory.DecodeByteArray(thumbnail,0, thumbnail.length,options);//Decode image, "thumbnail" is the object of image file
 		Bitmap songImage = Bitmap.CreateScaledBitmap(songImage1, width , height , true);// convert decoded bitmap into well scalled Bitmap format.
 			songImage1.Recycle();
 		return songImage;
 	}
 
-		/*
-		public static void CopyInitialDBtoFinal(string DatabaseFileNAme, string DatabaseFinalDirectory)
-		{
-			string dbName = DatabaseFileNAme;
-			string dbPath = System.IO.Path.Combine (DatabaseFinalDirectory, dbName);
-			// Check if your DB has already been extracted.
-			if (!File.Exists(dbPath))
-			{
-				string src = System.IO.Path.Combine (cpath, dbName);
-				string cpath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
-				using (BinaryReader br = new BinaryReader(Assets.Open(dbName)))
-				{
-					using (BinaryWriter bw = new BinaryWriter(new FileStream(dbPath, FileMode.Create)))
-					{
-						byte[] buffer = new byte[2048];
-						int len = 0;
-						while ((len = br.Read(buffer, 0, buffer.Length)) > 0)
-						{
-							bw.Write (buffer, 0, len);
-						}
-					}
-				}
-			}
-			}
-		*/
 	}
 }
 

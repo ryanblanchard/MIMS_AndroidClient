@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIMSPhotoUploader", "MIMSPhotoUploader.csproj", "{4567695E-3EDB-423C-9AEF-29526F4B9A83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Borrow pit photos (MIMS)", "Borrow pit photos (MIMS).csproj", "{4567695E-3EDB-423C-9AEF-29526F4B9A83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

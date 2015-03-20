@@ -16,6 +16,8 @@
     <AssemblyName>MIMSPhotoUploader</AssemblyName>
     <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <Description>Take photos of borrowpit structures and upload to central server.</Description>
+    <ApplicationIcon>C:\Users\C1780919\Pictures\PGWC\mimsIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,6 +69,7 @@
     <Compile Include="BorrowpitListActivity.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="SinglePhotoActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -91,6 +94,8 @@
     <AndroidResource Include="Resources\layout\layoutCustomView.axml" />
     <AndroidResource Include="Resources\layout\PhotoDetailActivity.axml" />
     <AndroidResource Include="Resources\layout\layoutListItemTemplate.axml" />
+    <AndroidResource Include="Resources\layout\layoutSinglePhoto.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\borrowpit.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

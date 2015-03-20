@@ -42,17 +42,23 @@ namespace MIMSPhotoUploader
 			//SetContentView (Resource.Layout.ImageListLayout);
 			if ( dbBorrowPit.IsNull(Intent.GetStringExtra ("BorrowpitName"), "") != "" )
 			{
+				/*
 				//string userName = Intent.GetStringExtra ("UserName") ?? "No User Details";
 				userName =  Intent.GetStringExtra ("UserName")?? "No User Details";
 				roadNo =  Intent.GetStringExtra ("RoadNo")?? "No Road Details";
 				borrowpitID = Intent.GetStringExtra ("BorrowpitId") ?? "No Borrow Pit ID";;
 				borrowpitName =  Intent.GetStringExtra ("BorrowpitName") ?? "No BorrowPit Name";
 				photoId = Intent.GetStringExtra ("PhotoID") ?? "NO PHOTO REQUESTED";
+				*/
 			}
 
 
 
 			SetContentView(Resource.Layout.layoutImageList); // loads the HomeScreen.axml as this activity's view
+
+			TextView textBorrowpitName = FindViewById<TextView> (Resource.Id.Borrowpit);
+			textBorrowpitName.Text = App._borrowpitName;
+
 			listView = FindViewById<ListView>(Resource.Id.List); // get reference to the ListView in the layout
 			// populate the listview with data
 			int Counter = 0;
@@ -68,7 +74,7 @@ namespace MIMSPhotoUploader
 			foreach (var pg in iQuery) {
 				MIMS_UPLOADED_PHOTOS p = new MIMS_UPLOADED_PHOTOS ();
 				p.ID = pg.ID;
-				p.BORROW_PIT_ID = int.Parse(borrowpitID);
+				p.BORROW_PIT_ID = pg.BORROW_PIT_ID;
 				p.CATEGORY_DESC = pg.CATEGORY_DESC;
 				p.CATEGORY_ID = pg.CATEGORY_ID;
 				p.PHOTO_FILENAME = pg.PHOTO_FILENAME;
@@ -88,13 +94,17 @@ namespace MIMSPhotoUploader
 
 				Log.Info (tag, "btnPhoto.Click");
 
+				App._photoID = "0";
+				App._photoCategory = "No Photo Selected";
+				App._photoCategoryID = "0";
+
 				Intent i = new Intent(this, typeof(AddPhotoActivity));
-				i.PutExtra("UserName",App._username);
+/*				i.PutExtra("UserName",App._username);
 				i.PutExtra("RoadNo",App._roadNo);
 				i.PutExtra("BorrowpitId",borrowpitID);
 				i.PutExtra("BorrowpitName",App._borrowpitName);
 				i.PutExtra("PhotoID","0");
-
+*/
 				StartActivity(i);
 
 			};
@@ -105,7 +115,7 @@ namespace MIMSPhotoUploader
 
 		void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 		{
-			Log.Info(tag, "button.Click");
+			Log.Info(tag, "OnListItemClick");
 
 			var lv = sender as ListView;
 			var t = tabItems [e.Position].ID;
@@ -113,7 +123,7 @@ namespace MIMSPhotoUploader
 			App._photoID = tabItems [e.Position].ID.ToString ();
 			App._photoFileName = tabItems [e.Position].PHOTO_FILENAME;
 			App._photoCategory = tabItems [e.Position].CATEGORY_DESC;
-
+			App._photoCategoryID = tabItems [e.Position].CATEGORY_ID.ToString();
 
 			Intent intent = new Intent (Intent.ActionView);
 
