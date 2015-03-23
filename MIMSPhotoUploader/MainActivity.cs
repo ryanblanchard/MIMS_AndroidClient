@@ -16,9 +16,7 @@ using System.Linq;
 
 namespace MIMSPhotoUploader
 {
-
-
-	[Activity (Label = "MIMSPhotoUploader", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait, MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "MIMSPhotoUploader", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait, MainLauncher = true)]
 	public class MainActivity : Activity
 	{
 		string tag = "MainActivity";
@@ -28,7 +26,7 @@ namespace MIMSPhotoUploader
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
+			RequestWindowFeature(WindowFeatures.NoTitle);
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
@@ -36,8 +34,7 @@ namespace MIMSPhotoUploader
 				//App app = new App ();
 			}
 
-			userName = "Ryan";//TODO: BUild Login Screen
-			App._username = "DEVELOPER01";
+			App._username = "DEVELOPER01"; //TODO: Build Login Screen
 			App._date = DateTime.Now;
 
 			/*
@@ -57,7 +54,7 @@ namespace MIMSPhotoUploader
 			TextView textGPSLong = FindViewById<TextView> (Resource.Id.textGPSLong);
 
 
-
+			/*
 			TextView syncStatus = FindViewById<TextView> (Resource.Id.textSyncStatus);
 
 			if (CheckPendingUploads () > 0) {
@@ -70,7 +67,7 @@ namespace MIMSPhotoUploader
 
 			EditText currDate = FindViewById<EditText> (Resource.Id.editCurentDate);
 			currDate.Text = string.Format("{0:yyyy/MM/dd}", App._date);
-
+*/
 
 			//currDate.EditText = DateTime.Now;
 

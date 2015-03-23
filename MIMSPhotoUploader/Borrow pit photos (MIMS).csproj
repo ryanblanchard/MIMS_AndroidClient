@@ -75,6 +75,7 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Resources\AppColors.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -99,6 +100,9 @@
     <AndroidResource Include="Resources\layout\BorrowpitHome.axml" />
     <AndroidResource Include="Resources\drawable\headingBackground.xml" />
     <AndroidResource Include="Resources\layout\viewHead.xml" />
+    <AndroidResource Include="Resources\drawable\RoundCornerBorder.xml" />
+    <AndroidResource Include="Resources\drawable\borrowpit2.jpg" />
+    <AndroidResource Include="Resources\drawable\borrowpit21.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

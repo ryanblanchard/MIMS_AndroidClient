@@ -5,7 +5,11 @@
     android:layout_height="wrap_content"
     android:id="@+id/linearLayoutHeading"
     android:weightSum="8"
-    android:background="@drawable/headingBackground">
+    android:background="@drawable/headingBackground"
+    android:paddingBottom="3dp"
+    android:paddingRight="3dp"
+    android:paddingTop="3dp"
+    android:paddingLeft="3dp">
     <ImageButton
         android:src="@android:drawable/ic_media_rew"
         android:layout_width="wrap_content"

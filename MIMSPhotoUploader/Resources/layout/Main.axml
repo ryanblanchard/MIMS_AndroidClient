@@ -2,7 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp">
     <include
         layout="@layout/viewHead" />
     <TextView
@@ -19,32 +23,20 @@
         android:id="@+id/myButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="25dp"
-        android:layout_margin="5dp" />
+        android:text="@string/hello" />
     <Button
         android:id="@+id/myPhotos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/photos"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp" />
+        android:text="@string/photos" />
     <ImageView
-        android:src="@drawable/borrowpit"
+        android:src="@drawable/borrowpit21"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="190dp"
         android:id="@+id/imageView1"
         android:maxHeight="@android:dimen/thumbnail_height"
         android:adjustViewBounds="false"
-        android:cropToPadding="false"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="5dp" />
+        android:cropToPadding="false" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,19 +49,20 @@
         android:layout_gravity="center"
         android:background="#ff998282">
         <TextView
+            android:text="@string/labelGPSPos"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/labelGPSPos"
+            android:textStyle="bold" />
+        <TextView
             android:text="@string/gpsOff"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/textGPSLong"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <TextView
-            android:text="@string/labelGPSPos"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/labelGPSPos" />
         <TextView
             android:text="@string/gpsOff"
             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -81,15 +74,48 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"
+        android:id="@+id/layoutSync"
         android:orientation="vertical"
         android:weightSum="4"
         android:splitMotionEvents="true"
         android:minWidth="25px"
-        android:minHeight="25px" />
-    <Button
-        android:id="@+id/btnQuickAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/syncNotAvailable" />
+        android:minHeight="25px"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:background="@drawable/RoundCornerBorder"
+        android:layout_gravity="center">
+        <TextView
+            android:text="Synchronisation Status"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/linearLayout2">
+            <TextView
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textNoOfUploads" />
+            <TextView
+                android:text="  photos ready for upload"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnQuickAdd"
+            android:text="Upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </LinearLayout>
