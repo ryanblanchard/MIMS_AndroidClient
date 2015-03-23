@@ -103,6 +103,7 @@
     <AndroidResource Include="Resources\drawable\RoundCornerBorder.xml" />
     <AndroidResource Include="Resources\drawable\borrowpit2.jpg" />
     <AndroidResource Include="Resources\drawable\borrowpit21.jpg" />
+    <AndroidResource Include="Resources\layout\layoutBorrowpitSelect.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

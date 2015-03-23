@@ -13,26 +13,45 @@ using Android.Util;
 namespace MIMSPhotoUploader
 {
 	[Activity (Label = "Select Borrowpit", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait)]			
-	public class BorrowpitListActivity : ListActivity
+	public class BorrowpitListActivity : Activity
 	{
-
-		string userName;
-		string borrowpitID;
-		string borrowpitName;
-
-
-		string tag;
 		List<BorrowPit> data;
+		List<string> roads;
+		string tag = "BorrowpitListActivbity";
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 			Log.Info (tag, "On Create()");
+
+			SetContentView (Resource.Layout.layoutBorrowpitSelect);
 			//EventLogTags = "Borrowpit List Activity";
 
+			ListView lv = FindViewById<ListView> (Resource.Id.List);
+/*			lv.OnItemClickListener =+ delegate {
+				Log.Info (tag, "OnlistItemClick");
+
+				var bp_ID = data [position].Id;
+
+				Log.Info (tag, "OnListItemClick Position {0}, ID {1}",  position, bp_ID);
+
+				App._borrowPitID = data [position].Id.ToString ();
+				App._borrowpitName = data [position].BorrowpitName;
+				App._roadNo = data [position].RoadNo;
+
+				Intent intent = new Intent (this, typeof(PhotoListActivity));
+				intent.PutExtra ("BorrowpitID", bp_ID);
+				intent.PutExtra ("BorrowpitName", data [position].BorrowpitName);
+
+				StartActivity(intent);
+
+
+			};
+
+*/
 			data = FillBorrowPits ();
 
-			ListAdapter = new BorrowpitAdapter (this,data);
+			lv.Adapter = new BorrowpitAdapter (this,data);
 		}
 
 		public List<BorrowPit> FillBorrowPits()
@@ -54,7 +73,7 @@ namespace MIMSPhotoUploader
 			return _borrowpitList;
 		}
 
-
+		
 		protected override void OnListItemClick (ListView l, View v, int position, long id)
 		{
 			base.OnListItemClick (l, v, position, id);
@@ -76,6 +95,7 @@ namespace MIMSPhotoUploader
 
 			//Toast.MakeText (this, data [position], ToastLength.Short).Show ();
 		}
+		
 
 	}
 }
