@@ -21,7 +21,14 @@
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView1"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:dropDownWidth="match_parent"
+            android:layout_weight="1" />
+        <Button
+            android:text="Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnFilter" />
     </LinearLayout>
     <ListView
         android:minWidth="25px"
