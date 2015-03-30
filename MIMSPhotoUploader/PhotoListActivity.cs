@@ -60,6 +60,19 @@ namespace MIMSPhotoUploader
 				tabItems.Add (p);
 				Counter++;
 			}
+
+			//Show "NO DATA" message when no images are available for a borrow pit
+			if (Counter == 0) {
+
+				MIMS_UPLOADED_PHOTOS p = new MIMS_UPLOADED_PHOTOS ();
+				p.ID = 99999;
+				p.BORROW_PIT_ID = 0;
+				p.CATEGORY_DESC = "No images yet";
+				p.PHOTO_FILENAME = "Images not yet available";
+
+				tabItems.Add (p);
+			}
+
 			//tabItems = itemsQuery.ToList();
 
 			listView.Adapter = new ImageListAdapter(this, tabItems);
