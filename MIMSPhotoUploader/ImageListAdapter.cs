@@ -37,8 +37,10 @@ namespace MIMSPhotoUploader
 			if (view == null) // no view to re-use, create new
 				view = context.LayoutInflater.Inflate(Resource.Layout.layoutCustomView, null);
 			view.FindViewById<TextView>(Resource.Id.Text1).Text = item.CATEGORY_DESC;
+			/*
 			if (item.UPLOADED == false)
 				view.FindViewById<TextView> (Resource.Id.Text1).SetTextColor(Color.Red);
+				*/
 			//view.FindViewById<TextView>(Resource.Id.Text2).Text = item.ID.ToString();
 			//view.FindViewById<CheckBox> (Resource.Id.checkUploaded).Checked = item.UPLOADED;
 			//view.FindViewById<CheckBox> (Resource.Id.checkUploaded).Text = item.UPLOADED == true ? "Uploaded" : "Not Uploaded";

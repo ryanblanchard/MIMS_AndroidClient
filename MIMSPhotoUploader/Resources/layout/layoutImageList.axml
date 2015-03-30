@@ -3,35 +3,8 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView
-        android:text="@string/textMainTitle"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textMainTitle"
-        android:textColor="#ff003399"
-        android:typeface="sans"
-        android:textStyle="bold"
-        android:capitalize="none"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:textAllCaps="true"
-        android:background="#ffdedede"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="8dp" />
-    <TextView
-        android:id="@+id/Borrowpit"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:text="@string/label_BorrowPitName"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp" />
+    <include
+        layout="@layout/viewHead" />
     <ListView
         android:id="@+id/List"
         android:layout_width="fill_parent"

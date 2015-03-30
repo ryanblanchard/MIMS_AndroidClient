@@ -28,27 +28,14 @@ namespace MIMSPhotoUploader
 		{
 			base.OnCreate (bundle);
 			//context = Application.ApplicationContext.getApplicationContext ();
+			RequestWindowFeature(WindowFeatures.NoTitle);
 			tag = "PhotoListActivity";
-
-			//SetContentView (Resource.Layout.ImageListLayout);
-			if ( dbBorrowPit.IsNull(Intent.GetStringExtra ("BorrowpitName"), "") != "" )
-			{
-				/*
-				//string userName = Intent.GetStringExtra ("UserName") ?? "No User Details";
-				userName =  Intent.GetStringExtra ("UserName")?? "No User Details";
-				roadNo =  Intent.GetStringExtra ("RoadNo")?? "No Road Details";
-				borrowpitID = Intent.GetStringExtra ("BorrowpitId") ?? "No Borrow Pit ID";;
-				borrowpitName =  Intent.GetStringExtra ("BorrowpitName") ?? "No BorrowPit Name";
-				photoId = Intent.GetStringExtra ("PhotoID") ?? "NO PHOTO REQUESTED";
-				*/
-			}
-
-
-
 			SetContentView(Resource.Layout.layoutImageList); // loads the HomeScreen.axml as this activity's view
 
-			TextView textBorrowpitName = FindViewById<TextView> (Resource.Id.Borrowpit);
-			textBorrowpitName.Text = App._borrowpitName;
+			TextView headBorrowpitName = FindViewById<TextView> (Resource.Id.headBorrowpitName);
+			headBorrowpitName.Text = App._borrowpitName;
+			//TextView textBorrowpitName = FindViewById<TextView> (Resource.Id.Borrowpit);
+			//textBorrowpitName.Text = App._borrowpitName;
 
 			listView = FindViewById<ListView>(Resource.Id.List); // get reference to the ListView in the layout
 			// populate the listview with data

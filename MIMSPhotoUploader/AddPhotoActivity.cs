@@ -16,6 +16,7 @@ using Android.Graphics;
 using Java.Net;
 using Android.Media;
 using MIMSPhotoUploader;
+using System.IO;
 
 namespace MIMSPhotoUploader
 {
@@ -51,33 +52,11 @@ namespace MIMSPhotoUploader
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
+			RequestWindowFeature(WindowFeatures.NoTitle);
 			SetContentView (Resource.Layout.AddPhotoLayout);
 
-
-			if ( dbBorrowPit.IsNull(Intent.GetStringExtra ("BorrowpitName"), "") != "" )
-			{
-				//string userName = Intent.GetStringExtra ("UserName") ?? "No User Details";
-
-				userName =  Intent.GetStringExtra ("UserName")?? "No User Details";
-				roadNo=  Intent.GetStringExtra ("RoadNo")?? "No Road Details";
-				borrowpitID = Intent.GetStringExtra ("BorrowpitId") ?? "No Borrow Pit ID";;
-				borrowpitName =  Intent.GetStringExtra ("BorrowpitName") ?? "No BorrowPit Name";
-				photoId = Intent.GetStringExtra ("PhotoID") ?? "NO PHOTO REQUESTED";
-			}
-
-			if (photoId != null && photoId != "NO PHOTO REQUESTED") {
-				Log.Info (tag, "Photo with ID: {0} requested by intent.", photoId);
-				//Load Up existing photo info
-			} else {
-				//load the photo record from SQLIte
-			}
-	
-			TextView textBPitId = FindViewById<TextView> (Resource.Id.textBorrowPitID);
-			textBPitId.Text = App._borrowPitID;
-
-			TextView textBPName = FindViewById<TextView> (Resource.Id.textBorrowPitName);
-			textBPName.Text = App._borrowpitName;
+			TextView headBorrowpitName = FindViewById<TextView> (Resource.Id.headBorrowpitName);
+			headBorrowpitName.Text = App._borrowpitName;
 
 			CreateDirectoryForPictures();
 
@@ -212,7 +191,7 @@ namespace MIMSPhotoUploader
 
 		private void CreateDirectoryForPictures()
 		{
-			App._dir = new File(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures), "MIMSBorrowpitPhotos");
+			App._dir = new Java.IO.File(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures), "MIMSBorrowpitPhotos");
 			if (!App._dir.Exists())
 			{
 				App._dir.Mkdirs();
@@ -227,7 +206,7 @@ namespace MIMSPhotoUploader
 
 			Intent intent = new Intent(MediaStore.ActionImageCapture);
 
-			App._file = new File(App._dir, String.Format("myPhoto_{0}.jpg", Guid.NewGuid()));
+			App._file = new Java.IO.File(App._dir, String.Format("mimsPhoto_{0}.jpg", Guid.NewGuid()));
 
 			Log.Info (tag, "Photo File Name - Absolute Path {0}", App._file.AbsolutePath);
 			Log.Info (tag, "Photo File Name - Path {0}", App._file.Path);
@@ -253,7 +232,31 @@ namespace MIMSPhotoUploader
 			mediaScanIntent.SetData(contentUri);
 			SendBroadcast(mediaScanIntent);
 
-			
+
+			/* For saving to disk */
+
+
+			var fileName = App._file.AbsolutePath;
+			int SaveSizeH = 700;
+			int SaveSizeW = 700;
+
+			Bitmap imageSave = HelperUtils.LoadAndResizeBitmap (App._file.Path, SaveSizeW, SaveSizeH);
+
+			if (App._file.Exists()) {
+				Log.Info("DeleteFile", String.Format("Image found at {0} will be removed", App._file.AbsolutePath));
+
+				App._file.Delete ();
+			}
+			using (var os = new FileStream(fileName, FileMode.CreateNew))
+			{
+				imageSave.Compress(Bitmap.CompressFormat.Jpeg, 70, os);
+				os.Flush ();
+				os.Close ();
+				imageSave.Recycle ();
+			}
+
+
+			/******/
 
 			// display in ImageView. We will resize the bitmap to fit the display
 			// Loading the full sized image will consume to much memory 
@@ -261,9 +264,10 @@ namespace MIMSPhotoUploader
 			int height = Resources.DisplayMetrics.HeightPixels;
 			int width = imageView.Width ;
 
+			//Bitmap imageView = HelperUtils.LoadAndResizeBitmap (App._file.Path, width, height);
+
 			App.bitmap = HelperUtils.LoadAndResizeBitmap (App._file.Path, width, height);
 
-				//byte[] imgData = App.bitmap.
 			imageView = FindViewById<ImageView>(Resource.Id.imageView1);
 			if (App.bitmap != null) {
 				imageView.SetImageBitmap (App.bitmap);

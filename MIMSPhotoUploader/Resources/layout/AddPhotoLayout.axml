@@ -3,24 +3,8 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView
-        android:text="@string/textMainTitle"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textMainTitle"
-        android:textColor="#ff003399"
-        android:typeface="sans"
-        android:textStyle="bold"
-        android:capitalize="none"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:textAllCaps="true"
-        android:background="#ffdedede"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="8dp" />
+    <include
+        layout="@layout/viewHead" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -29,22 +13,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp">
-        <TextView
-            android:text="@string/label_borrowPitID"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/textBorrowPitID" />
-        <TextView
-            android:text="@string/label_borrowPitName"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:id="@+id/textBorrowPitName" />
-    </LinearLayout>
+        android:layout_marginBottom="5dp"
+        android:minWidth="25px"
+        android:minHeight="25px" />
     <TextView
         android:text="@string/label_photoCategory"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -60,7 +31,7 @@
         android:id="@+id/spinCategory"
         android:spinnerMode="dropdown" />
     <Button
-        android:text="@string/button_TakePhoto"
+        android:text="Take Photo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnTakePhoto" />

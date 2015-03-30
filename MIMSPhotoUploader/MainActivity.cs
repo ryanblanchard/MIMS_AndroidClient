@@ -30,12 +30,13 @@ namespace MIMSPhotoUploader
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-			if (bundle == null) {
-				//App app = new App ();
-			}
+
+
+
 
 			App._username = "DEVELOPER01"; //TODO: Build Login Screen
 			App._date = DateTime.Now;
+			App._borrowpitName = "No Borrowpit Selected";
 
 			/*
 			//copies the inital SQLite db out of Assets into the final folder 
@@ -45,8 +46,9 @@ namespace MIMSPhotoUploader
 				CopyInitialDBtoFinal (dbBorrowPit.dbFileName, DB_file.Path);
 			}
 			*/
-
-			TextView textMainTitle = FindViewById<TextView> (Resource.Id.textMainTitle);
+			TextView headBorrowpitName = FindViewById<TextView> (Resource.Id.headBorrowpitName);
+			headBorrowpitName.Text = App._borrowpitName;
+			//TextView textMainTitle = FindViewById<TextView> (Resource.Id.textMainTitle);
 			TextView textGPSNote =  FindViewById<TextView> (Resource.Id.textGPSNote);
 
 			TextView labelGPSPos = FindViewById<TextView> (Resource.Id.labelGPSPos);

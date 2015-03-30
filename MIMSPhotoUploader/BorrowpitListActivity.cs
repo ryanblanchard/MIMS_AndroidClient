@@ -29,6 +29,9 @@ namespace MIMSPhotoUploader
 			SetContentView (Resource.Layout.layoutBorrowpitSelect);
 			//EventLogTags = "Borrowpit List Activity";
 
+			TextView headBorrowpitName = FindViewById<TextView> (Resource.Id.headBorrowpitName);
+			headBorrowpitName.Text = App._borrowpitName;
+
 			data = FillBorrowPits ();
 			ListView lv = FindViewById<ListView> (Resource.Id.List);
 			lv.ItemClick += delegate (object IntentSender, Android.Widget.AdapterView.ItemClickEventArgs e)
