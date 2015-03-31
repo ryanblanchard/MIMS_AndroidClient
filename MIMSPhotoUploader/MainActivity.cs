@@ -38,6 +38,20 @@ namespace MIMSPhotoUploader
 			App._date = DateTime.Now;
 			App._borrowpitName = "No Borrowpit Selected";
 
+			var i = CheckPendingUploads ();
+			i = 0; //remove
+			TextView textNoOfUploads = FindViewById<TextView> (Resource.Id.textNoOfUploads);
+			textNoOfUploads.Text = i.ToString ();
+
+			View ls = FindViewById<View> (Resource.Id.layoutSync);
+
+			if (i > 0) {
+				ls.Visibility = ViewStates.Visible;
+			} else {
+				
+				ls.Visibility = ViewStates.Gone;
+			}
+
 			/*
 			//copies the inital SQLite db out of Assets into the final folder 
 			var db = dbBorrowPit.ConnectToDB ();
