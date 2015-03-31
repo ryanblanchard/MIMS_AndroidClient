@@ -105,6 +105,9 @@ namespace MIMSPhotoUploader
 				btnTakePhoto.Click += TakeAPicture;
 
 				btnSave = FindViewById<Button> (Resource.Id.btnSave);
+				//Hide the save button if no image has been taken
+				btnSave.Visibility = ViewStates.Gone;
+
 				btnSave.Click += delegate {
 					//click event here
 
@@ -148,6 +151,9 @@ namespace MIMSPhotoUploader
 								spinCategory.SetSelection(0);
 								imageView.SetImageBitmap(null);
 								textPhotoUrl.Text = "";
+
+								btnSave.Visibility = ViewStates.Gone;
+
 							}
 							else
 							{
@@ -282,6 +288,9 @@ namespace MIMSPhotoUploader
 				textPhotoUrl.Text = App._file.Path;
 				App.bitmap = null;
 			}
+
+			btnSave.Visibility = ViewStates.Visible;
+
 		}
 
 
