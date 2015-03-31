@@ -21,8 +21,6 @@ namespace MIMSPhotoUploader
 	{
 		string tag = "MainActivity";
 
-		string userName;
-
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -30,16 +28,12 @@ namespace MIMSPhotoUploader
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-
-
-
-
 			App._username = "DEVELOPER01"; //TODO: Build Login Screen
 			App._date = DateTime.Now;
 			App._borrowpitName = "No Borrowpit Selected";
 
 			var i = CheckPendingUploads ();
-			i = 0; //remove
+			//i = 0; //remove
 			TextView textNoOfUploads = FindViewById<TextView> (Resource.Id.textNoOfUploads);
 			textNoOfUploads.Text = i.ToString ();
 

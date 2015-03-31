@@ -77,6 +77,8 @@
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Resources\AppColors.xml" />
+    <None Include="Resources\values\Colors.xml" />
+    <None Include="Resources\values\AppColors.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />

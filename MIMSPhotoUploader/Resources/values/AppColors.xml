@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="apptheme_color">#3340e5</color>
+    <color name="dark">#99999999</color>
+    <color name="purple">#9C27B0</color>
+    <color name="blue">#003399</color>
+    <color name="white">#FFFFFF</color>
+    <color name="ceiblue">#003399</color>
+</resources>
+

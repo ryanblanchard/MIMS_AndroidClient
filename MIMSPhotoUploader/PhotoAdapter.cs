@@ -13,40 +13,14 @@ namespace MIMSPhotoUploader
 
 	public class PhotoAdapter : BaseAdapter
 	{
-
-		LayoutInflater _inflator;
-
-		private String[] _categories;
-		private String[] _filenames;
-		private TypedArray _images;
-		private int[] _catId;
-
-		private int viewResourceId;
-	
-		int _borrowPitID;
 		Activity _activity;
 		List<Photo> _photoList;
-
 
 		public PhotoAdapter (Activity activity)
 		{
 			_activity = activity;
-			//_borrowPitID = BorrowpitID;
 			FillPhotoList ();
-
-			//ArrayAdapter adapter = new ArrayAdapter (this, Resource.Layout.ImageListLayout, data);        
-			//ListAdapter = adapter;
 		}
-
-/*
- * protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
-
-		}
- */
-
-
 
 		public void FillPhotoList()
 		{
@@ -68,9 +42,9 @@ namespace MIMSPhotoUploader
 				_photoList.Add (ph);
 
 				sub++;
-				_categories [sub] = ph.category;
+				//_categories [sub] = ph.category;
 				//_images [sub] = ph.image;
-				_filenames [sub] = ph.fileName;
+				//_filenames [sub] = ph.fileName;
 
 			}
 
@@ -82,11 +56,7 @@ namespace MIMSPhotoUploader
 
 		public override Java.Lang.Object GetItem (int position) 
 		{
-			//Uri u = new Uri ();
-
 			return _photoList [position].fileName;
-			//return u;
-			 //return _photoList [position].fileName;
 		}
 
 		public override long GetItemId (int position) {
@@ -107,46 +77,12 @@ namespace MIMSPhotoUploader
 
 
 			//imageView.SetImageBitmap(_images [position]);
-			category.Text = _categories [position];
-			filename.Text = _filenames [position];
+			//category.Text = _categories [position];
+			//filename.Text = _filenames [position];
 			CheckBox.Checked = false;
-
-
-			/*
-			 * 
-			var BorrowPitName = view.FindViewById<TextView> (Resource.Id.BorrowPitName);
-			var ID = view.FindViewById<TextView> (Resource.Id.BorrowPitId);
-			var uploadChk = view.FindViewById<CheckBox> (Resource.Id.checkUploaded);
-			*/
-
-			//BorrowPitName.Text = _borrowpitList [position].BorrowpitName;
-			//RoadNo.Text  =_borrowpitList [position].RoadNo;
-			//ID.Text = _borrowpitList [position].Id.ToString();
 
 			return view;
 		}
-
-
-		/*
-
-		public void FillBorrowPits()
-		{
-			var conn = dbBorrowPit.ConnectToDB();
-			var table = conn.Table<Data.MIMS_MATERIAL_SRC> ();
-
-			_borrowpitList = new List<BorrowPit> ();
-
-			foreach (var t in table) {
-				BorrowPit bp = new BorrowPit ();
-				bp.Id = t.ID;
-				bp.BorrowpitName = t.MATERIAL_SRC_NO;
-				bp.RoadNo = t.ROAD_NO;
-
-				_borrowpitList.Add (bp);
-			}
-		}		 * 
-		 * */
-
 
 	}
 }

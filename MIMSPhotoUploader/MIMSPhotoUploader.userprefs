@@ -1,14 +1,26 @@
 ﻿<Properties StartupItem="Borrow pit photos (MIMS).csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.AVD_for_Galaxy_Nexus_by_Google_Intel" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PhotoListActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.4d00788bc89f816f" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Resources\values\Colors.xml">
     <Files>
-      <File FileName="PhotoListActivity.cs" Line="79" Column="3" />
+      <File FileName="Resources\values\Colors.xml" Line="17" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Borrow pit photos (MIMS)" expanded="True">
+            <Node name="Resources" expanded="True">
+              <Node name="values" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="G:\DEV\MIMS\MIMS_AndroidClient\MIMSPhotoUploader\PhotoListActivity.cs" line="66" column="1" />
-      <Breakpoint file="G:\DEV\MIMS\MIMS_AndroidClient\MIMSPhotoUploader\PhotoListActivity.cs" line="67" column="1" />
+      <Breakpoint file="G:\DEV\MIMS\MIMS_AndroidClient\MIMSPhotoUploader\PhotoListActivity.cs" line="113" column="1" />
+      <Breakpoint file="G:\DEV\MIMS\MIMS_AndroidClient\MIMSPhotoUploader\PhotoListActivity.cs" line="75" column="1" />
+      <Breakpoint file="G:\DEV\MIMS\MIMS_AndroidClient\MIMSPhotoUploader\MainActivity.cs" line="35" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
