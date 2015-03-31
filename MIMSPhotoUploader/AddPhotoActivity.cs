@@ -158,6 +158,7 @@ namespace MIMSPhotoUploader
 							else
 							{
 								Toast.MakeText(this, "Please Select a category for this photo.", ToastLength.Short);
+								textPhotoUrl.Text = "Please ensure image category has been selected";
 							}
 						}
 						catch (Exception ex)

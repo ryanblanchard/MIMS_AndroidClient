@@ -43,7 +43,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp" />
     <TextView
-        android:text="Small Text"
+        android:text="Image Filename:"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
