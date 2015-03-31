@@ -14,7 +14,7 @@ using Android.Util;
 
 namespace MIMSPhotoUploader
 {
-	[Activity (Label = "PhotoListActivity", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait)]			
+	[Activity (Label = "Borrow pit Photo List", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait)]			
 	public class PhotoListActivity : Activity
 	{
 		ListView listView;

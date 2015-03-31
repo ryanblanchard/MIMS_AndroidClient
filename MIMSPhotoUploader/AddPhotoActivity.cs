@@ -124,27 +124,35 @@ namespace MIMSPhotoUploader
 							int geo_y = 0;  //App._long == null?0:App._Long;
 							int catID = int.Parse(App._photoCategoryID);
 
-							var im = new MIMS_UPLOADED_PHOTOS ();
-							im.BORROW_PIT_ID = bpID; //TODO: pass the real borrowpit id
-							im.USERNAME = App._username; 
-							im.TRANSACTION_DATE = DateTime.Now;
-							im.PHOTO_FILENAME = App._file == null ? "No_Image" : App._file.Path;
-							im.UPLOADED = false;
-							im.DEGREES_DECIMAL_X = geo_x; // int.Parse(App._lat);
-							im.DEGREES_DECIMAL_Y = geo_y; // int.Parse(App._long);
-							im.CATEGORY_ID = catID; //int.Parse(App._photoCategoryID);
-							im.CATEGORY_DESC = App._photoCategory;
+							if (catID != 0)
+							{
 
-							var s = DB.Insert (im);
+								var im = new MIMS_UPLOADED_PHOTOS ();
+								im.BORROW_PIT_ID = bpID; //TODO: pass the real borrowpit id
+								im.USERNAME = App._username; 
+								im.TRANSACTION_DATE = DateTime.Now;
+								im.PHOTO_FILENAME = App._file == null ? "No_Image" : App._file.Path;
+								im.UPLOADED = false;
+								im.DEGREES_DECIMAL_X = geo_x; // int.Parse(App._lat);
+								im.DEGREES_DECIMAL_Y = geo_y; // int.Parse(App._long);
+								im.CATEGORY_ID = catID; //int.Parse(App._photoCategoryID);
+								im.CATEGORY_DESC = App._photoCategory;
 
-							//textMessage.Text = String.Format("New Image ID: {0} - {1}", img.Id, img.ImageDesc);
-							Log.Info (tag, String.Format ("New Image ID: {0} - {1}", im.ID, im.PHOTO_FILENAME));
+								var s = DB.Insert (im);
 
-							//clear form
-							btnTakePhoto.Text = "Saved! Take another?";
-							spinCategory.SetSelection(0);
-							imageView.SetImageBitmap(null);
-							textPhotoUrl.Text = "";
+								//textMessage.Text = String.Format("New Image ID: {0} - {1}", img.Id, img.ImageDesc);
+								Log.Info (tag, String.Format ("New Image ID: {0} - {1}", im.ID, im.PHOTO_FILENAME));
+
+								//clear form
+								btnTakePhoto.Text = "Saved! Take another?";
+								spinCategory.SetSelection(0);
+								imageView.SetImageBitmap(null);
+								textPhotoUrl.Text = "";
+							}
+							else
+							{
+								Toast.MakeText(this, "Please Select a category for this photo.", ToastLength.Short);
+							}
 						}
 						catch (Exception ex)
 						{
@@ -171,14 +179,14 @@ namespace MIMSPhotoUploader
 				App._photoCategory = spinner.GetItemAtPosition (e.Position).ToString();
 				App._photoCategoryID = spinner.GetItemIdAtPosition (e.Position).ToString();
 
-				string toast = string.Format ("The planet is {0}", spinner.GetItemAtPosition (e.Position));
+				//string toast = string.Format ("The planet is {0}", spinner.GetItemAtPosition (e.Position));
 
 				if (spinner.SelectedItem == null) {
 					spinner.SetSelection (0);
 				} else {
 					PhotoCategoryDesc = spinner.GetItemAtPosition (e.Position).ToString();  //GetItemAtPosition (e.Position);
 				}
-				Toast.MakeText (this, toast, ToastLength.Long).Show ();
+				//Toast.MakeText (this, toast, ToastLength.Long).Show ();
 			}
 		}
 
